@@ -1,0 +1,11 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+arg1 = $(1)
+export PATH=C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major\bin\;C:\Users\GUNAY\.eclipse\com.renesas.platform_1435879475\Utilities;C:/Renesas/e2_studio/eclipse//plugins/com.renesas.runtime.jdk.hotspot.win32.x86_64_11.0.8.202009102051/jdk-11.0.8+10/bin/client;C:/Renesas/e2_studio/eclipse//plugins/com.renesas.runtime.jdk.hotspot.win32.x86_64_11.0.8.202009102051/jdk-11.0.8+10/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\Program Files\MATLAB\R2019b\bin;C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility;C:\Program Files\TortoiseGit\bin;C:\Program Files\dotnet\;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Users\GUNAY\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\GUNAY\AppData\Local\Programs\Python\Python37\;C:\Python27;C:\Users\GUNAY\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\GUNAY\.dotnet\tools;C:\Users\GUNAY\AppData\Local\Microsoft\WindowsApps;C:\Users\GUNAY\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Renesas\e2_studio\eclipse
+export TCINSTALL=C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major$(call arg1,\)
+export CWD=$(CURDIR)
+export TC_VERSION=10.2.1.20201103
+export PWD=$(CURDIR)
+export GCC_VERSION=10.2.1

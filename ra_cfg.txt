@@ -1,0 +1,651 @@
+FSP Configuration
+  Board "Custom User Board (Any Device)"
+  R7FA2L1AB3CFM
+    part_number: R7FA2L1AB3CFM
+    rom_size_bytes: 262144
+    ram_size_bytes: 32768
+    data_flash_size_bytes: 8192
+    package_style: LQFP
+    package_pins: 64
+    
+  RA2L1
+    series: 2
+    
+  RA2L1 Family
+    OFS0 register settings: Independent WDT: Start Mode: IWDT is Disabled
+    OFS0 register settings: Independent WDT: Timeout Period: 2048 cycles
+    OFS0 register settings: Independent WDT: Dedicated Clock Frequency Divisor: 128
+    OFS0 register settings: Independent WDT: Window End Position:  0% (no window end position)
+    OFS0 register settings: Independent WDT: Window Start Position: 100% (no window start position)
+    OFS0 register settings: Independent WDT: Reset Interrupt Request Select: Reset is enabled
+    OFS0 register settings: Independent WDT: Stop Control: Stop counting when in Sleep, Snooze mode, or Software Standby
+    OFS0 register settings: WDT: Start Mode Select: Stop WDT after a reset (register-start mode)
+    OFS0 register settings: WDT: Timeout Period: 16384 cycles
+    OFS0 register settings: WDT: Clock Frequency Division Ratio: 128
+    OFS0 register settings: WDT: Window End Position:  0% (no window end position)
+    OFS0 register settings: WDT: Window Start Position: 100% (no window start position)
+    OFS0 register settings: WDT: Reset Interrupt Request: Reset
+    OFS0 register settings: WDT: Stop Control: Stop counting when entering Sleep mode
+    OFS1 register settings: Internal Clock Supply Architecture Type: Type A
+    OFS1 register settings: Voltage Detection 0 Circuit Start: Voltage monitor 0 reset is disabled after reset
+    OFS1 register settings: Voltage Detection 0 Level: 1.90 V
+    OFS1 register settings: HOCO Oscillation Enable: HOCO oscillation is enabled after reset
+    Use Low Voltage Mode: Not Supported
+    MPU: Enable or disable PC Region 0: Disabled
+    MPU: PC0 Start: 0x000FFFFC
+    MPU: PC0 End: 0x000FFFFF
+    MPU: Enable or disable PC Region 1: Disabled
+    MPU: PC1 Start: 0x000FFFFC
+    MPU: PC1 End: 0x000FFFFF
+    MPU: Enable or disable Memory Region 0: Disabled
+    MPU: Memory Region 0 Start: 0x000FFFFC
+    MPU: Memory Region 0 End: 0x000FFFFF
+    MPU: Enable or disable Memory Region 1: Disabled
+    MPU: Memory Region 1 Start: 0x200FFFFC
+    MPU: Memory Region 1 End: 0x200FFFFF
+    MPU: Enable or disable Memory Region 2: Disabled
+    MPU: Memory Region 2 Start: 0x407FFFFC
+    MPU: Memory Region 2 End: 0x407FFFFF
+    MPU: Enable or disable Memory Region 3: Disabled
+    MPU: Memory Region 3 Start: 0x400DFFFC
+    MPU: Memory Region 3 End: 0x400DFFFF
+    Power: DC-DC Regulator: Disabled
+    Power: DC-DC Supply Range: 2.7V to 3.6V
+    Main Oscillator Wait Time: 262144 cycles
+    ID Code Mode: Unlocked (Ignore ID)
+    ID Code (32 Hex Characters): FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    
+  RA Common
+    Main stack size (bytes): 0x400
+    Heap size (bytes): 0
+    MCU Vcc (mV): 3300
+    Parameter checking: Disabled
+    Assert Failures: Return FSP_ERR_ASSERTION
+    Error Log: No Error Log
+    Soft Reset: Disabled
+    Main Oscillator Populated: Not Populated
+    PFS Protect: Enabled
+    C Runtime Initialization : Enabled
+    Main Oscillator Clock Source: Crystal or Resonator
+    Subclock Populated: Not Populated
+    Subclock Drive (Drive capacitance availability varies by MCU): Standard/Normal mode
+    Subclock Stabilization Time (ms): 1000
+    
+  Clocks
+    XTAL 20000000Hz
+    HOCO 48MHz
+    Clock Src: HOCO
+    ICLK Div /1
+    PCLKB Div /2
+    PCLKD Div /1
+    CLKOUT Disabled
+    CLKOUT Div /1
+    
+  Pin Configurations
+    R7FA2L1AB2DFM.pincfg -> g_bsp_pin_cfg
+      AVCC0 56 ANALOG0_AVCC0 - - - - - - - - IO "Read only" - 
+      AVSS0 57 ANALOG0_AVSS0 - - - - - - - - IO "Read only" - 
+      P000 64 ADC0_AN00 NTC - - "Analog mode" - - "ADC0: AN00; CTSU0: TS21; ICU0: IRQ06" - None - - 
+      P001 63 ADC0_AN01 PILELEVEL - - "Analog mode" - - "ADC0: AN01; CTSU0: TS22; ICU0: IRQ07" - None - - 
+      P002 62 ADC0_AN02 REARBRAKE - - "Analog mode" - - "ADC0: AN02; CTSU0: TS23; ICU0: IRQ02" - None - - 
+      P003 61 ADC0_AN03 FRONTBRAKE - - "Analog mode" - - "ADC0: AN03; CTSU0: TS24" - None - - 
+      P004 60 ADC0_AN04 THROTTLE - - "Analog mode" - - "ADC0: AN04; CTSU0: TS25; ICU0: IRQ03" - None - - 
+      P010 59 - CN2_30_P10_TS30CFC - - Disabled - - "ADC0: AN05; CTSU0: CFCTS30" - None - - 
+      P011 58 - CN2_27_P011_TS31CFC - - Disabled - - "ADC0: AN06; CTSU0: CFCTS31" - None - - 
+      P012 55 ADC0_AN07 FLYINGPROTECTION - - "Analog mode" - - "ADC0: AN07; CTSU0: CFCTS32" - None - - 
+      P013 54 GPIO HEADLIGHT - - "Output mode (Initial Low)" - - "ADC0: AN08; CTSU0: CFCTS33" - None - - 
+      P014 53 GPIO LIS3PWR - - "Output mode (Initial Low)" - - "ADC0: AN09; DAC0: DA" - None - - 
+      P015 52 GPIO LIS3MOSI - - "Output mode (Initial Low)" - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
+      P100 48 GPIO LIS2MISO - - "Input mode" - - "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - None - - 
+      P101 47 GPIO LIS3CS - - "Output mode (Initial Low)" - - "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - None - - 
+      P102 46 GPIO EEPROMPWR - - "Output mode (Initial Low)" - - "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - None - - 
+      P103 45 GPIO EEPROMMISO - - "Input mode" - - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - None - - 
+      P104 44 GPT1_GTIOCB RGBR - - "Peripheral mode" - - "CTSU0: CFCTS13; GPT_POEG1: GTETRG; GPT1: GTIOCB; ICU0: IRQ01; KINT0: KRM4; SCI0: RXD; SCI0: SCL; SPI0: SSL1" - None - - 
+      P105 43 GPIO EEPROMMOSI - - "Output mode (Initial Low)" - - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - None - - 
+      P106 42 GPIO EEPROMCS - - "Output mode (Initial Low)" - - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - None - - 
+      P107 41 GPIO EEPROMCLK - - "Output mode (Initial Low)" - - "GPT8: GTIOCA; KINT0: KRM7" - None - - 
+      P108 33 DEBUG0_SWDIO - Low - "Peripheral mode" - None "DEBUG0: SWDIO; GPT_OPS0: GTOULO; GPT0: GTIOCB; SCI9: CTS; SPI1: SSL0" - IO - - 
+      P109 34 SCI9_TXD MCU2L86TX - - "Peripheral mode" - - "CAN0: CTX; CGC0: CLKOUT; CTSU0: CFCTS10; GPT_OPS0: GTOVUP; GPT1: GTIOCA; SCI1: SCK; SCI9: SDA; SCI9: TXD; SPI1: MOSI" - None - - 
+      P110 35 SCI9_RXD MCU2L86RX - - "Peripheral mode" - - "ACMP(0-1): VCOUT; CAN0: CRX; CTSU0: CFCTS11; GPT_OPS0: GTOVLO; GPT1: GTIOCB; ICU0: IRQ03; SCI2: CTS; SCI9: RXD; SCI9: SCL; SPI1: MISO" - None - - 
+      P111 36 GPIO L86EN - - "Output mode (Initial Low)" - - "AGT0: AGTOA; CTSU0: CFCTS12; GPT3: GTIOCA; ICU0: IRQ04; SCI2: SCK; SCI9: SCK; SPI1: RSPCK" - None - - 
+      P112 37 GPIO BLESTAT - - "Input mode" - - "AGT0: AGTOB; CTSU0: TSCAP; GPT3: GTIOCB; SCI1: SCK; SCI2: SDA; SCI2: TXD; SPI1: SSL0" - None - - 
+      P113 38 GPIO BLEPWREN - - "Output mode (Initial High)" - - "CTSU0: CFCTS27; GPT2: GTIOCA" - None - - 
+      P200 27 GPIO LIS3INT2 - - "Input mode" - - "ICU0: NMI" - None - - 
+      P201 26 - - - - Disabled - - "SYSTEM0: MD" - None - - 
+      P204 24 GPIO BLERSTCTRL - - "Output mode (Initial Low)" - - "AGT1: AGTIO; CAC0: CACREF; CTSU0: TS00; GPT_OPS0: GTIW; GPT4: GTIOCB; IIC0: SCL; SCI0: SCK; SCI9: SCK; SPI1: RSPCK" - None - - 
+      P205 23 SCI0_TXD MCU2LOCKTX - - "Peripheral mode" - - "AGT1: AGTO; CGC0: CLKOUT; GPT_OPS0: GTIV; GPT4: GTIOCA; ICU0: IRQ01; IIC1: SCL; SCI0: SDA; SCI0: TXD; SCI9: CTS; SPI1: SSL0" - None - - 
+      P206 22 SCI0_RXD MXU2LOCKRX - - "Peripheral mode" - - "GPT_OPS0: GTIU; ICU0: IRQ00; IIC1: SDA; SCI0: RXD; SCI0: SCL; SPI1: SSL1" - None - - 
+      P207 21 GPIO BOOSTEN - - "Output mode (Initial High)" - - - - None - - 
+      P208 20 GPIO BUZZERCTRL - - "Output mode (Initial Low)" - - "AGT0: AGTOB" - None - - 
+      P212 10 - - - - Disabled - - "AGT1: AGTEE; CGC0: EXTAL; GPT_POEG1: GTETRG; GPT0: GTIOCB; ICU0: IRQ03; SCI1: RXD; SCI1: SCL" - None - - 
+      P213 9 GPIO CHGOK - - "Input mode" - - "CGC0: XTAL; GPT_POEG0: GTETRG; GPT0: GTIOCA; ICU0: IRQ02; SCI1: SDA; SCI1: TXD" - None - - 
+      P214 7 - - - - Disabled - - "CGC0: XCOUT" - None - - 
+      P215 6 - - - - Disabled - - "CGC0: XCIN" - None - - 
+      P300 32 DEBUG0_SWCLK - Low - "Peripheral mode" - None "DEBUG0: SWCLK; GPT_OPS0: GTOUUP; GPT0: GTIOCA; SPI1: SSL1" - IO - - 
+      P301 31 SCI2_RXD MCU2BLERX - - "Peripheral mode" - - "AGT0: AGTIO; CTSU0: CFCTS09; GPT_OPS0: GTOULO; GPT4: GTIOCB; ICU0: IRQ06; SCI2: RXD; SCI2: SCL; SCI9: CTS; SPI1: SSL2" - None - - 
+      P302 30 SCI2_TXD MCU2BLETX - - "Peripheral mode" - - "CTSU0: CFCTS08; GPT_OPS0: GTOUUP; GPT4: GTIOCA; ICU0: IRQ05; SCI2: SDA; SCI2: TXD; SPI1: SSL3" - None - - 
+      P303 29 GPIO STORAGEEN - - "Output mode (Initial High)" - - "CTSU0: CFCTS02; GPT7: GTIOCB" - None - - 
+      P304 28 GPIO LIS3INT1 - - "Input mode" - - "GPT7: GTIOCA" - None - - 
+      P400 1 GPIO SIM7500RSTCTRL - - "Output mode (Initial Low)" - - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - None - - 
+      P401 2 SCI1_TXD MCU2SIMTX - - "Peripheral mode" - - "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - None - - 
+      P402 3 SCI1_RXD MCU2SIMRX - - "Peripheral mode" - - "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - None - - 
+      P403 4 GPIO SIM7500PWRCTRL - - "Output mode (Initial Low)" - - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - None - - 
+      P407 16 GPIO BLDCEN - - "Output mode (Initial Low)" - - "ADC0: ADTRG; AGT0: AGTIO; IIC0: SDA; RTC0: RTCOUT; SCI0: CTS; SPI1: SSL3" - None - - 
+      P408 15 SCI3_RXD MCU2SCTRX - - "Peripheral mode" - - "CTSU0: TS04; GPT_OPS0: GTOWLO; GPT5: GTIOCB; ICU0: IRQ07; IIC0: SCL; SCI1: CTS; SCI3: RXD; SCI3: SCL" - None - - 
+      P409 14 SCI3_TXD MCU2SCTTX - - "Peripheral mode" - - "CTSU0: TS05; GPT_OPS0: GTOWUP; GPT5: GTIOCA; ICU0: IRQ06; SCI3: SDA; SCI3: TXD" - None - - 
+      P410 13 GPIO LOCKSTAT - - "Input mode" - - "AGT1: AGTOB; CTSU0: TS06; GPT_OPS0: GTOVLO; GPT9: GTIOCB; ICU0: IRQ05; SCI0: RXD; SCI0: SCL; SCI3: SCK; SPI0: MISO" - None - - 
+      P411 12 GPIO PGOOD - - "Input mode" - - "AGT1: AGTOA; CTSU0: TS07; GPT_OPS0: GTOVUP; GPT9: GTIOCA; ICU0: IRQ04; SCI0: SDA; SCI0: TXD; SCI3: CTS; SPI0: MOSI" - None - - 
+      P500 49 GPIO LIS3SCK - - "Output mode (Initial Low)" - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
+      P501 50 GPT2_GTIOCB RGBG - - "Peripheral mode" - - "ADC0: AN17; GPT_OPS0: GTIV; GPT2: GTIOCB; SCI1: SDA; SCI1: TXD" - None - - 
+      P502 51 GPT3_GTIOCB RGBB - - "Peripheral mode" - - "ADC0: AN18; GPT_OPS0: GTIW; GPT3: GTIOCB; SCI1: RXD; SCI1: SCL" - None - - 
+      P914 18 - - - - Disabled - - "SYSTEM0: VLO" - None - - 
+      RES# 25 SYSTEM0_RES - - - - - - - - IO "Read only" - 
+      VCC 11 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCC 19 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCC 39 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCL 5 SYSTEM0_VCL - - - - - - - - IO "Read only" - 
+      VSS 8 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+      VSS 17 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+      VSS 40 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+    RA2L1 EK -> 
+      AVCC0 56 ANALOG0_AVCC0 - - - - - - - - IO "Read only" - 
+      AVSS0 57 ANALOG0_AVSS0 - - - - - - - - IO "Read only" - 
+      P000 64 ADC0_AN00 NTC - - "Analog mode" - - "ADC0: AN00; CTSU0: TS21; ICU0: IRQ06" - None - - 
+      P001 63 ADC0_AN01 PILELEVEL - - "Analog mode" - - "ADC0: AN01; CTSU0: TS22; ICU0: IRQ07" - None - - 
+      P002 62 ADC0_AN02 REARBRAKE - - "Analog mode" - - "ADC0: AN02; CTSU0: TS23; ICU0: IRQ02" - None - - 
+      P003 61 ADC0_AN03 FRONTBRAKE - - "Analog mode" - - "ADC0: AN03; CTSU0: TS24" - None - - 
+      P004 60 GPIO THROTTLE - - "Input mode" - - "ADC0: AN04; CTSU0: TS25; ICU0: IRQ03" - None - - 
+      P010 59 - CN2_30_P10_TS30CFC - - Disabled - - "ADC0: AN05; CTSU0: CFCTS30" - None - - 
+      P011 58 - CN2_27_P011_TS31CFC - - Disabled - - "ADC0: AN06; CTSU0: CFCTS31" - None - - 
+      P012 55 ADC0_AN07 FLYINGPROTECTION - - "Analog mode" - - "ADC0: AN07; CTSU0: CFCTS32" - None - - 
+      P013 54 - HEADLIGHT - - Disabled - - "ADC0: AN08; CTSU0: CFCTS33" - None - - 
+      P014 53 ADC0_AN09 LIS3PWR - - "Analog mode" - - "ADC0: AN09; DAC0: DA" - None - - 
+      P015 52 GPIO LIS3MOSI - - "Input mode" - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
+      P100 48 SPI0_MISO LIS2MISO - - "Peripheral mode" - - "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - None - - 
+      P101 47 SPI0_MOSI LIS3CS - - "Peripheral mode" - - "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - None - - 
+      P102 46 SPI0_RSPCK EEPROMPWR - - "Peripheral mode" - - "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - None - - 
+      P103 45 SPI0_SSL0 EEPROMMISO - - "Peripheral mode" - - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - None - - 
+      P104 44 - RGBR - - Disabled - - "CTSU0: CFCTS13; GPT_POEG1: GTETRG; GPT1: GTIOCB; ICU0: IRQ01; KINT0: KRM4; SCI0: RXD; SCI0: SCL; SPI0: SSL1" - None - - 
+      P105 43 SPI0_SSL2 EEPROMMOSI - - "Peripheral mode" - - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - None - - 
+      P106 42 SPI0_SSL3 EEPROMCS - - "Peripheral mode" - - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - None - - 
+      P107 41 GPIO EEPROMCLK - - "Output mode (Initial Low)" - - "GPT8: GTIOCA; KINT0: KRM7" - None - - 
+      P108 33 DEBUG0_SWDIO - Low - "Peripheral mode" - None "DEBUG0: SWDIO; GPT_OPS0: GTOULO; GPT0: GTIOCB; SCI9: CTS; SPI1: SSL0" - IO - - 
+      P109 34 GPIO MCU2L86TX - - "Output mode (Initial Low)" - - "CAN0: CTX; CGC0: CLKOUT; CTSU0: CFCTS10; GPT_OPS0: GTOVUP; GPT1: GTIOCA; SCI1: SCK; SCI9: SDA; SCI9: TXD; SPI1: MOSI" - None - - 
+      P110 35 GPIO MCU2L86RX - - "Input mode" - - "ACMP(0-1): VCOUT; CAN0: CRX; CTSU0: CFCTS11; GPT_OPS0: GTOVLO; GPT1: GTIOCB; ICU0: IRQ03; SCI2: CTS; SCI9: RXD; SCI9: SCL; SPI1: MISO" - None - - 
+      P111 36 GPIO L86EN - - "Output mode (Initial Low)" - - "AGT0: AGTOA; CTSU0: CFCTS12; GPT3: GTIOCA; ICU0: IRQ04; SCI2: SCK; SCI9: SCK; SPI1: RSPCK" - None - - 
+      P112 37 GPIO BLESTAT - - "Output mode (Initial Low)" - - "AGT0: AGTOB; CTSU0: TSCAP; GPT3: GTIOCB; SCI1: SCK; SCI2: SDA; SCI2: TXD; SPI1: SSL0" - None - - 
+      P113 38 GPIO BLEPWREN - - "Output mode (Initial Low)" - - "CTSU0: CFCTS27; GPT2: GTIOCA" - None - - 
+      P200 27 - LIS3INT2 - - Disabled - - "ICU0: NMI" - None - - 
+      P201 26 - - - - Disabled - - "SYSTEM0: MD" - None - - 
+      P204 24 SCI9_SCK BLERSTCTRL - - "Peripheral mode" - - "AGT1: AGTIO; CAC0: CACREF; CTSU0: TS00; GPT_OPS0: GTIW; GPT4: GTIOCB; IIC0: SCL; SCI0: SCK; SCI9: SCK; SPI1: RSPCK" - None - - 
+      P205 23 SCI9_CTS MCU2LOCKTX - - "Peripheral mode" - - "AGT1: AGTO; CGC0: CLKOUT; GPT_OPS0: GTIV; GPT4: GTIOCA; ICU0: IRQ01; IIC1: SCL; SCI0: SDA; SCI0: TXD; SCI9: CTS; SPI1: SSL0" - None - - 
+      P206 22 GPIO MXU2LOCKRX - - "Output mode (Initial Low)" - - "GPT_OPS0: GTIU; ICU0: IRQ00; IIC1: SDA; SCI0: RXD; SCI0: SCL; SPI1: SSL1" - None - - 
+      P207 21 GPIO BOOSTEN - - "Output mode (Initial Low)" - - - - None - - 
+      P208 20 GPIO BUZZERCTRL - - "Output mode (Initial Low)" - - "AGT0: AGTOB" - None - - 
+      P212 10 - - - - Disabled - - "AGT1: AGTEE; CGC0: EXTAL; GPT_POEG1: GTETRG; GPT0: GTIOCB; ICU0: IRQ03; SCI1: RXD; SCI1: SCL" - None - - 
+      P213 9 - CHGOK - - Disabled - - "CGC0: XTAL; GPT_POEG0: GTETRG; GPT0: GTIOCA; ICU0: IRQ02; SCI1: SDA; SCI1: TXD" - None - - 
+      P214 7 - - - - Disabled - - "CGC0: XCOUT" - None - - 
+      P215 6 - - - - Disabled - - "CGC0: XCIN" - None - - 
+      P300 32 DEBUG0_SWCLK - Low - "Peripheral mode" - None "DEBUG0: SWCLK; GPT_OPS0: GTOUUP; GPT0: GTIOCA; SPI1: SSL1" - IO - - 
+      P301 31 SCI2_SCL MCU2BLERX - - "Peripheral mode" - - "AGT0: AGTIO; CTSU0: CFCTS09; GPT_OPS0: GTOULO; GPT4: GTIOCB; ICU0: IRQ06; SCI2: RXD; SCI2: SCL; SCI9: CTS; SPI1: SSL2" - None - - 
+      P302 30 SCI2_SDA MCU2BLETX - - "Peripheral mode" - - "CTSU0: CFCTS08; GPT_OPS0: GTOUUP; GPT4: GTIOCA; ICU0: IRQ05; SCI2: SDA; SCI2: TXD; SPI1: SSL3" - None - - 
+      P303 29 GPIO STORAGEEN - - "Output mode (Initial Low)" - - "CTSU0: CFCTS02; GPT7: GTIOCB" - None - - 
+      P304 28 GPIO LIS3INT1 - - "Output mode (Initial Low)" - - "GPT7: GTIOCA" - None - - 
+      P400 1 GPT6_GTIOCA SIM7500RSTCTRL - - "Peripheral mode" - - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - None - - 
+      P401 2 - MCU2SIMTX - - Disabled - - "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - None - - 
+      P402 3 GPIO MCU2SIMRX - - "Input mode" - - "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - None - - 
+      P403 4 - SIM7500PWRCTRL - - Disabled - - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - None - - 
+      P407 16 IIC0_SDA BLDCEN - - "Peripheral mode" - - "ADC0: ADTRG; AGT0: AGTIO; IIC0: SDA; RTC0: RTCOUT; SCI0: CTS; SPI1: SSL3" - None - - 
+      P408 15 IIC0_SCL MCU2SCTRX - - "Peripheral mode" - - "CTSU0: TS04; GPT_OPS0: GTOWLO; GPT5: GTIOCB; ICU0: IRQ07; IIC0: SCL; SCI1: CTS; SCI3: RXD; SCI3: SCL" - None - - 
+      P409 14 GPIO MCU2SCTTX - - "Input mode" - - "CTSU0: TS05; GPT_OPS0: GTOWUP; GPT5: GTIOCA; ICU0: IRQ06; SCI3: SDA; SCI3: TXD" - None - - 
+      P410 13 SCI0_RXD LOCKSTAT - - "Peripheral mode" - - "AGT1: AGTOB; CTSU0: TS06; GPT_OPS0: GTOVLO; GPT9: GTIOCB; ICU0: IRQ05; SCI0: RXD; SCI0: SCL; SCI3: SCK; SPI0: MISO" - None - - 
+      P411 12 SCI0_TXD PGOOD - - "Peripheral mode" - - "AGT1: AGTOA; CTSU0: TS07; GPT_OPS0: GTOVUP; GPT9: GTIOCA; ICU0: IRQ04; SCI0: SDA; SCI0: TXD; SCI3: CTS; SPI0: MOSI" - None - - 
+      P500 49 GPIO LIS3SCK - - "Output mode (Initial Low)" - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
+      P501 50 SCI1_SDA RGBG - - "Peripheral mode" - - "ADC0: AN17; GPT_OPS0: GTIV; GPT2: GTIOCB; SCI1: SDA; SCI1: TXD" - None - - 
+      P502 51 SCI1_SCL RGBB - - "Peripheral mode" - - "ADC0: AN18; GPT_OPS0: GTIW; GPT3: GTIOCB; SCI1: RXD; SCI1: SCL" - None - - 
+      P914 18 - - - - Disabled - - "SYSTEM0: VLO" - None - - 
+      RES# 25 SYSTEM0_RES - - - - - - - - IO "Read only" - 
+      VCC 11 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCC 19 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCC 39 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCL 5 SYSTEM0_VCL - - - - - - - - IO "Read only" - 
+      VSS 8 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+      VSS 17 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+      VSS 40 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+    RSSK-RA2L1 -> 
+      AVCC0 56 ANALOG0_AVCC0 - - - - - - - - IO "Read only" - 
+      AVSS0 57 ANALOG0_AVSS0 - - - - - - - - IO "Read only" - 
+      P000 64 CTSU0_TS21 NTC - - "Peripheral mode" - - "ADC0: AN00; CTSU0: TS21; ICU0: IRQ06" - None - - 
+      P001 63 CTSU0_TS22 PILELEVEL - - "Peripheral mode" - - "ADC0: AN01; CTSU0: TS22; ICU0: IRQ07" - None - - 
+      P002 62 CTSU0_TS23 REARBRAKE - - "Peripheral mode" - - "ADC0: AN02; CTSU0: TS23; ICU0: IRQ02" - None - - 
+      P003 61 CTSU0_TS24 FRONTBRAKE - - "Peripheral mode" - - "ADC0: AN03; CTSU0: TS24" - None - - 
+      P004 60 CTSU0_TS25 THROTTLE - - "Peripheral mode" - - "ADC0: AN04; CTSU0: TS25; ICU0: IRQ03" - None - - 
+      P010 59 CTSU0_CFCTS30 CN2_30_P10_TS30CFC - - "Peripheral mode" - - "ADC0: AN05; CTSU0: CFCTS30" - None - - 
+      P011 58 CTSU0_CFCTS31 CN2_27_P011_TS31CFC - - "Peripheral mode" - - "ADC0: AN06; CTSU0: CFCTS31" - None - - 
+      P012 55 CTSU0_CFCTS32 FLYINGPROTECTION - - "Peripheral mode" - - "ADC0: AN07; CTSU0: CFCTS32" - None - - 
+      P013 54 CTSU0_CFCTS33 HEADLIGHT - - "Peripheral mode" - - "ADC0: AN08; CTSU0: CFCTS33" - None - - 
+      P014 53 - LIS3PWR - - Disabled - - "ADC0: AN09; DAC0: DA" - None - - 
+      P015 52 CTSU0_CFCTS28 LIS3MOSI - - "Peripheral mode" - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
+      P100 48 CTSU0_CFCTS26 LIS2MISO - - "Peripheral mode" - - "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - None - - 
+      P101 47 CTSU0_CFCTS16 LIS3CS - - "Peripheral mode" - - "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - None - - 
+      P102 46 CTSU0_CFCTS15 EEPROMPWR - - "Peripheral mode" - - "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - None - - 
+      P103 45 CTSU0_CFCTS14 EEPROMMISO - - "Peripheral mode" - - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - None - - 
+      P104 44 CTSU0_CFCTS13 RGBR - - "Peripheral mode" - - "CTSU0: CFCTS13; GPT_POEG1: GTETRG; GPT1: GTIOCB; ICU0: IRQ01; KINT0: KRM4; SCI0: RXD; SCI0: SCL; SPI0: SSL1" - None - - 
+      P105 43 CTSU0_CFCTS34 EEPROMMOSI - - "Peripheral mode" - - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - None - - 
+      P106 42 - EEPROMCS - - Disabled - - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - None - - 
+      P107 41 GPIO EEPROMCLK - - "Output mode (Initial Low)" - - "GPT8: GTIOCA; KINT0: KRM7" - None - - 
+      P108 33 DEBUG0_SWDIO - Low - "Peripheral mode" - None "DEBUG0: SWDIO; GPT_OPS0: GTOULO; GPT0: GTIOCB; SCI9: CTS; SPI1: SSL0" - IO - - 
+      P109 34 CTSU0_CFCTS10 MCU2L86TX - - "Peripheral mode" - - "CAN0: CTX; CGC0: CLKOUT; CTSU0: CFCTS10; GPT_OPS0: GTOVUP; GPT1: GTIOCA; SCI1: SCK; SCI9: SDA; SCI9: TXD; SPI1: MOSI" - None - - 
+      P110 35 CTSU0_CFCTS11 MCU2L86RX - - "Peripheral mode" - - "ACMP(0-1): VCOUT; CAN0: CRX; CTSU0: CFCTS11; GPT_OPS0: GTOVLO; GPT1: GTIOCB; ICU0: IRQ03; SCI2: CTS; SCI9: RXD; SCI9: SCL; SPI1: MISO" - None - - 
+      P111 36 CTSU0_CFCTS12 L86EN - - "Peripheral mode" - - "AGT0: AGTOA; CTSU0: CFCTS12; GPT3: GTIOCA; ICU0: IRQ04; SCI2: SCK; SCI9: SCK; SPI1: RSPCK" - None - - 
+      P112 37 CTSU0_TSCAP BLESTAT - - "Peripheral mode" - - "AGT0: AGTOB; CTSU0: TSCAP; GPT3: GTIOCB; SCI1: SCK; SCI2: SDA; SCI2: TXD; SPI1: SSL0" - None - - 
+      P113 38 CTSU0_CFCTS27 BLEPWREN - - "Peripheral mode" - - "CTSU0: CFCTS27; GPT2: GTIOCA" - None - - 
+      P200 27 - LIS3INT2 - - Disabled - - "ICU0: NMI" - None - - 
+      P201 26 - - - - Disabled - - "SYSTEM0: MD" - None - - 
+      P204 24 CTSU0_TS00 BLERSTCTRL - - "Peripheral mode" - - "AGT1: AGTIO; CAC0: CACREF; CTSU0: TS00; GPT_OPS0: GTIW; GPT4: GTIOCB; IIC0: SCL; SCI0: SCK; SCI9: SCK; SPI1: RSPCK" - None - - 
+      P205 23 GPIO MCU2LOCKTX - - "Input mode" - - "AGT1: AGTO; CGC0: CLKOUT; GPT_OPS0: GTIV; GPT4: GTIOCA; ICU0: IRQ01; IIC1: SCL; SCI0: SDA; SCI0: TXD; SCI9: CTS; SPI1: SSL0" - None - - 
+      P206 22 GPIO MXU2LOCKRX - - "Input mode" - - "GPT_OPS0: GTIU; ICU0: IRQ00; IIC1: SDA; SCI0: RXD; SCI0: SCL; SPI1: SSL1" - None - - 
+      P207 21 - BOOSTEN - - Disabled - - - - None - - 
+      P208 20 - BUZZERCTRL - - Disabled - - "AGT0: AGTOB" - None - - 
+      P212 10 - - - - Disabled - - "AGT1: AGTEE; CGC0: EXTAL; GPT_POEG1: GTETRG; GPT0: GTIOCB; ICU0: IRQ03; SCI1: RXD; SCI1: SCL" - None - - 
+      P213 9 - CHGOK - - Disabled - - "CGC0: XTAL; GPT_POEG0: GTETRG; GPT0: GTIOCA; ICU0: IRQ02; SCI1: SDA; SCI1: TXD" - None - - 
+      P214 7 - - - - Disabled - - "CGC0: XCOUT" - None - - 
+      P215 6 - - - - Disabled - - "CGC0: XCIN" - None - - 
+      P300 32 DEBUG0_SWCLK - Low - "Peripheral mode" - None "DEBUG0: SWCLK; GPT_OPS0: GTOUUP; GPT0: GTIOCA; SPI1: SSL1" - IO - - 
+      P301 31 CTSU0_CFCTS09 MCU2BLERX - - "Peripheral mode" - - "AGT0: AGTIO; CTSU0: CFCTS09; GPT_OPS0: GTOULO; GPT4: GTIOCB; ICU0: IRQ06; SCI2: RXD; SCI2: SCL; SCI9: CTS; SPI1: SSL2" - None - - 
+      P302 30 CTSU0_CFCTS08 MCU2BLETX - - "Peripheral mode" - - "CTSU0: CFCTS08; GPT_OPS0: GTOUUP; GPT4: GTIOCA; ICU0: IRQ05; SCI2: SDA; SCI2: TXD; SPI1: SSL3" - None - - 
+      P303 29 CTSU0_CFCTS02 STORAGEEN - - "Peripheral mode" - - "CTSU0: CFCTS02; GPT7: GTIOCB" - None - - 
+      P304 28 GPIO LIS3INT1 - - "Output mode (Initial Low)" - - "GPT7: GTIOCA" - None - - 
+      P400 1 GPIO SIM7500RSTCTRL - - "Output mode (Initial Low)" - - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - None - - 
+      P401 2 - MCU2SIMTX - - Disabled - - "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - None - - 
+      P402 3 CTSU0_TS18 MCU2SIMRX - - "Peripheral mode" - - "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - None - - 
+      P403 4 CTSU0_TS17 SIM7500PWRCTRL - - "Peripheral mode" - - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - None - - 
+      P407 16 - BLDCEN - - Disabled - - "ADC0: ADTRG; AGT0: AGTIO; IIC0: SDA; RTC0: RTCOUT; SCI0: CTS; SPI1: SSL3" - None - - 
+      P408 15 CTSU0_TS04 MCU2SCTRX - - "Peripheral mode" - - "CTSU0: TS04; GPT_OPS0: GTOWLO; GPT5: GTIOCB; ICU0: IRQ07; IIC0: SCL; SCI1: CTS; SCI3: RXD; SCI3: SCL" - None - - 
+      P409 14 CTSU0_TS05 MCU2SCTTX - - "Peripheral mode" - - "CTSU0: TS05; GPT_OPS0: GTOWUP; GPT5: GTIOCA; ICU0: IRQ06; SCI3: SDA; SCI3: TXD" - None - - 
+      P410 13 CTSU0_TS06 LOCKSTAT - - "Peripheral mode" - - "AGT1: AGTOB; CTSU0: TS06; GPT_OPS0: GTOVLO; GPT9: GTIOCB; ICU0: IRQ05; SCI0: RXD; SCI0: SCL; SCI3: SCK; SPI0: MISO" - None - - 
+      P411 12 CTSU0_TS07 PGOOD - - "Peripheral mode" - - "AGT1: AGTOA; CTSU0: TS07; GPT_OPS0: GTOVUP; GPT9: GTIOCA; ICU0: IRQ04; SCI0: SDA; SCI0: TXD; SCI3: CTS; SPI0: MOSI" - None - - 
+      P500 49 - LIS3SCK - - Disabled - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
+      P501 50 - RGBG - - Disabled - - "ADC0: AN17; GPT_OPS0: GTIV; GPT2: GTIOCB; SCI1: SDA; SCI1: TXD" - None - - 
+      P502 51 - RGBB - - Disabled - - "ADC0: AN18; GPT_OPS0: GTIW; GPT3: GTIOCB; SCI1: RXD; SCI1: SCL" - None - - 
+      P914 18 - - - - Disabled - - "SYSTEM0: VLO" - None - - 
+      RES# 25 SYSTEM0_RES - - - - - - - - IO "Read only" - 
+      VCC 11 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCC 19 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCC 39 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCL 5 SYSTEM0_VCL - - - - - - - - IO "Read only" - 
+      VSS 8 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+      VSS 17 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+      VSS 40 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+    R7FA2L1AB3CFM.pincfg -> 
+      AVCC0 56 ANALOG0_AVCC0 - - - - - - - - IO "Read only" - 
+      AVSS0 57 ANALOG0_AVSS0 - - - - - - - - IO "Read only" - 
+      P000 64 - NTC - - Disabled - - "ADC0: AN00; CTSU0: TS21; ICU0: IRQ06" - None - - 
+      P001 63 - PILELEVEL - - Disabled - - "ADC0: AN01; CTSU0: TS22; ICU0: IRQ07" - None - - 
+      P002 62 - REARBRAKE - - Disabled - - "ADC0: AN02; CTSU0: TS23; ICU0: IRQ02" - None - - 
+      P003 61 - FRONTBRAKE - - Disabled - - "ADC0: AN03; CTSU0: TS24" - None - - 
+      P004 60 - THROTTLE - - Disabled - - "ADC0: AN04; CTSU0: TS25; ICU0: IRQ03" - None - - 
+      P010 59 - CN2_30_P10_TS30CFC - - Disabled - - "ADC0: AN05; CTSU0: CFCTS30" - None - - 
+      P011 58 - CN2_27_P011_TS31CFC - - Disabled - - "ADC0: AN06; CTSU0: CFCTS31" - None - - 
+      P012 55 - FLYINGPROTECTION - - Disabled - - "ADC0: AN07; CTSU0: CFCTS32" - None - - 
+      P013 54 - HEADLIGHT - - Disabled - - "ADC0: AN08; CTSU0: CFCTS33" - None - - 
+      P014 53 - LIS3PWR - - Disabled - - "ADC0: AN09; DAC0: DA" - None - - 
+      P015 52 - LIS3MOSI - - Disabled - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
+      P100 48 - LIS2MISO - - Disabled - - "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - None - - 
+      P101 47 - LIS3CS - - Disabled - - "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - None - - 
+      P102 46 - EEPROMPWR - - Disabled - - "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - None - - 
+      P103 45 - EEPROMMISO - - Disabled - - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - None - - 
+      P104 44 - RGBR - - Disabled - - "CTSU0: CFCTS13; GPT_POEG1: GTETRG; GPT1: GTIOCB; ICU0: IRQ01; KINT0: KRM4; SCI0: RXD; SCI0: SCL; SPI0: SSL1" - None - - 
+      P105 43 - EEPROMMOSI - - Disabled - - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - None - - 
+      P106 42 - EEPROMCS - - Disabled - - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - None - - 
+      P107 41 - EEPROMCLK - - Disabled - - "GPT8: GTIOCA; KINT0: KRM7" - None - - 
+      P108 33 DEBUG0_SWDIO - Low - "Peripheral mode" - None "DEBUG0: SWDIO; GPT_OPS0: GTOULO; GPT0: GTIOCB; SCI9: CTS; SPI1: SSL0" - IO - - 
+      P109 34 - MCU2L86TX - - Disabled - - "CAN0: CTX; CGC0: CLKOUT; CTSU0: CFCTS10; GPT_OPS0: GTOVUP; GPT1: GTIOCA; SCI1: SCK; SCI9: SDA; SCI9: TXD; SPI1: MOSI" - None - - 
+      P110 35 - MCU2L86RX - - Disabled - - "ACMP(0-1): VCOUT; CAN0: CRX; CTSU0: CFCTS11; GPT_OPS0: GTOVLO; GPT1: GTIOCB; ICU0: IRQ03; SCI2: CTS; SCI9: RXD; SCI9: SCL; SPI1: MISO" - None - - 
+      P111 36 - L86EN - - Disabled - - "AGT0: AGTOA; CTSU0: CFCTS12; GPT3: GTIOCA; ICU0: IRQ04; SCI2: SCK; SCI9: SCK; SPI1: RSPCK" - None - - 
+      P112 37 - BLESTAT - - Disabled - - "AGT0: AGTOB; CTSU0: TSCAP; GPT3: GTIOCB; SCI1: SCK; SCI2: SDA; SCI2: TXD; SPI1: SSL0" - None - - 
+      P113 38 - BLEPWREN - - Disabled - - "CTSU0: CFCTS27; GPT2: GTIOCA" - None - - 
+      P200 27 - LIS3INT2 - - Disabled - - "ICU0: NMI" - None - - 
+      P201 26 - - - - Disabled - - "SYSTEM0: MD" - None - - 
+      P204 24 - BLERSTCTRL - - Disabled - - "AGT1: AGTIO; CAC0: CACREF; CTSU0: TS00; GPT_OPS0: GTIW; GPT4: GTIOCB; IIC0: SCL; SCI0: SCK; SCI9: SCK; SPI1: RSPCK" - None - - 
+      P205 23 - MCU2LOCKTX - - Disabled - - "AGT1: AGTO; CGC0: CLKOUT; GPT_OPS0: GTIV; GPT4: GTIOCA; ICU0: IRQ01; IIC1: SCL; SCI0: SDA; SCI0: TXD; SCI9: CTS; SPI1: SSL0" - None - - 
+      P206 22 - MXU2LOCKRX - - Disabled - - "GPT_OPS0: GTIU; ICU0: IRQ00; IIC1: SDA; SCI0: RXD; SCI0: SCL; SPI1: SSL1" - None - - 
+      P207 21 - BOOSTEN - - Disabled - - - - None - - 
+      P208 20 - BUZZERCTRL - - Disabled - - "AGT0: AGTOB" - None - - 
+      P212 10 - - - - Disabled - - "AGT1: AGTEE; CGC0: EXTAL; GPT_POEG1: GTETRG; GPT0: GTIOCB; ICU0: IRQ03; SCI1: RXD; SCI1: SCL" - None - - 
+      P213 9 - CHGOK - - Disabled - - "CGC0: XTAL; GPT_POEG0: GTETRG; GPT0: GTIOCA; ICU0: IRQ02; SCI1: SDA; SCI1: TXD" - None - - 
+      P214 7 - - - - Disabled - - "CGC0: XCOUT" - None - - 
+      P215 6 - - - - Disabled - - "CGC0: XCIN" - None - - 
+      P300 32 DEBUG0_SWCLK - Low - "Peripheral mode" - None "DEBUG0: SWCLK; GPT_OPS0: GTOUUP; GPT0: GTIOCA; SPI1: SSL1" - IO - - 
+      P301 31 - MCU2BLERX - - Disabled - - "AGT0: AGTIO; CTSU0: CFCTS09; GPT_OPS0: GTOULO; GPT4: GTIOCB; ICU0: IRQ06; SCI2: RXD; SCI2: SCL; SCI9: CTS; SPI1: SSL2" - None - - 
+      P302 30 - MCU2BLETX - - Disabled - - "CTSU0: CFCTS08; GPT_OPS0: GTOUUP; GPT4: GTIOCA; ICU0: IRQ05; SCI2: SDA; SCI2: TXD; SPI1: SSL3" - None - - 
+      P303 29 - STORAGEEN - - Disabled - - "CTSU0: CFCTS02; GPT7: GTIOCB" - None - - 
+      P304 28 - LIS3INT1 - - Disabled - - "GPT7: GTIOCA" - None - - 
+      P400 1 - SIM7500RSTCTRL - - Disabled - - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - None - - 
+      P401 2 - MCU2SIMTX - - Disabled - - "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - None - - 
+      P402 3 - MCU2SIMRX - - Disabled - - "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - None - - 
+      P403 4 - SIM7500PWRCTRL - - Disabled - - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - None - - 
+      P407 16 - BLDCEN - - Disabled - - "ADC0: ADTRG; AGT0: AGTIO; IIC0: SDA; RTC0: RTCOUT; SCI0: CTS; SPI1: SSL3" - None - - 
+      P408 15 - MCU2SCTRX - - Disabled - - "CTSU0: TS04; GPT_OPS0: GTOWLO; GPT5: GTIOCB; ICU0: IRQ07; IIC0: SCL; SCI1: CTS; SCI3: RXD; SCI3: SCL" - None - - 
+      P409 14 - MCU2SCTTX - - Disabled - - "CTSU0: TS05; GPT_OPS0: GTOWUP; GPT5: GTIOCA; ICU0: IRQ06; SCI3: SDA; SCI3: TXD" - None - - 
+      P410 13 - LOCKSTAT - - Disabled - - "AGT1: AGTOB; CTSU0: TS06; GPT_OPS0: GTOVLO; GPT9: GTIOCB; ICU0: IRQ05; SCI0: RXD; SCI0: SCL; SCI3: SCK; SPI0: MISO" - None - - 
+      P411 12 - PGOOD - - Disabled - - "AGT1: AGTOA; CTSU0: TS07; GPT_OPS0: GTOVUP; GPT9: GTIOCA; ICU0: IRQ04; SCI0: SDA; SCI0: TXD; SCI3: CTS; SPI0: MOSI" - None - - 
+      P500 49 - LIS3SCK - - Disabled - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
+      P501 50 - RGBG - - Disabled - - "ADC0: AN17; GPT_OPS0: GTIV; GPT2: GTIOCB; SCI1: SDA; SCI1: TXD" - None - - 
+      P502 51 - RGBB - - Disabled - - "ADC0: AN18; GPT_OPS0: GTIW; GPT3: GTIOCB; SCI1: RXD; SCI1: SCL" - None - - 
+      P914 18 - - - - Disabled - - "SYSTEM0: VLO" - None - - 
+      RES# 25 SYSTEM0_RES - - - - - - - - IO "Read only" - 
+      VCC 11 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCC 19 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCC 39 SYSTEM0_VCC - - - - - - - - IO "Read only" - 
+      VCL 5 SYSTEM0_VCL - - - - - - - - IO "Read only" - 
+      VSS 8 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+      VSS 17 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+      VSS 40 SYSTEM0_VSS - - - - - - - - IO "Read only" - 
+    
+  User Events
+    
+  User Event Links
+    
+  Module "I/O Port Driver on r_ioport"
+    Parameter Checking: Default (BSP)
+    
+  Module "UART Driver on r_sci_uart"
+    Parameter Checking: Default (BSP)
+    FIFO Support: Disable
+    DTC Support: Disable
+    Flow Control Support: Disable
+    
+  Module "ADC Driver on r_adc"
+    Parameter Checking: Default (BSP)
+    
+  Module "Timer Driver on r_gpt"
+    Parameter Checking: Default (BSP)
+    Pin Output Support: Enabled
+    Write Protect Enable: Disabled
+    
+  HAL
+    Instance "g_ioport I/O Port Driver on r_ioport"
+      Name: g_ioport
+      Port 1 ELC Trigger Source: Disabled
+      Port 2 ELC Trigger Source: Disabled
+      Port 3 ELC Trigger Source: Disabled
+      Port 4 ELC Trigger Source: Disabled
+      
+    Instance "UART_LOCK UART Driver on r_sci_uart"
+      General: Name: UART_LOCK
+      General: Channel: 0
+      General: Data Bits: 8bits
+      General: Parity: None
+      General: Stop Bits: 1bit
+      Baud: Baud Rate: 115200
+      Baud: Baud Rate Modulation: Disabled
+      Baud: Max Error (%): 5
+      Flow Control: CTS/RTS Selection: Hardware RTS
+      Flow Control: Software RTS Port: Disabled
+      Flow Control: Software RTS Pin: Disabled
+      Extra: Clock Source: Internal Clock
+      Extra: Start bit detection: Falling Edge
+      Extra: Noise Filter: Disable
+      Extra: Receive FIFO Trigger Level: Max
+      Interrupts: Callback: user_uart_callback_LOCK
+      Interrupts: Receive Interrupt Priority: Priority 2
+      Interrupts: Transmit Data Empty Interrupt Priority: Priority 2
+      Interrupts: Transmit End Interrupt Priority: Priority 2
+      Interrupts: Error Interrupt Priority: Priority 2
+      
+    Instance "UART_SIMCOM UART Driver on r_sci_uart"
+      General: Name: UART_SIMCOM
+      General: Channel: 1
+      General: Data Bits: 8bits
+      General: Parity: None
+      General: Stop Bits: 1bit
+      Baud: Baud Rate: 115200
+      Baud: Baud Rate Modulation: Disabled
+      Baud: Max Error (%): 5
+      Flow Control: CTS/RTS Selection: Hardware RTS
+      Flow Control: Software RTS Port: Disabled
+      Flow Control: Software RTS Pin: Disabled
+      Extra: Clock Source: Internal Clock
+      Extra: Start bit detection: Falling Edge
+      Extra: Noise Filter: Disable
+      Extra: Receive FIFO Trigger Level: Max
+      Interrupts: Callback: user_uart_callback_SIMCOM
+      Interrupts: Receive Interrupt Priority: Priority 2
+      Interrupts: Transmit Data Empty Interrupt Priority: Priority 2
+      Interrupts: Transmit End Interrupt Priority: Priority 2
+      Interrupts: Error Interrupt Priority: Priority 2
+      
+    Instance "UART_BLE UART Driver on r_sci_uart"
+      General: Name: UART_BLE
+      General: Channel: 2
+      General: Data Bits: 8bits
+      General: Parity: None
+      General: Stop Bits: 1bit
+      Baud: Baud Rate: 115200
+      Baud: Baud Rate Modulation: Disabled
+      Baud: Max Error (%): 5
+      Flow Control: CTS/RTS Selection: Hardware RTS
+      Flow Control: Software RTS Port: Disabled
+      Flow Control: Software RTS Pin: Disabled
+      Extra: Clock Source: Internal Clock
+      Extra: Start bit detection: Falling Edge
+      Extra: Noise Filter: Disable
+      Extra: Receive FIFO Trigger Level: Max
+      Interrupts: Callback: user_uart_callback_BLE
+      Interrupts: Receive Interrupt Priority: Priority 2
+      Interrupts: Transmit Data Empty Interrupt Priority: Priority 2
+      Interrupts: Transmit End Interrupt Priority: Priority 2
+      Interrupts: Error Interrupt Priority: Priority 2
+      
+    Instance "UART_SCOOTER UART Driver on r_sci_uart"
+      General: Name: UART_SCOOTER
+      General: Channel: 3
+      General: Data Bits: 8bits
+      General: Parity: None
+      General: Stop Bits: 1bit
+      Baud: Baud Rate: 9600
+      Baud: Baud Rate Modulation: Disabled
+      Baud: Max Error (%): 5
+      Flow Control: CTS/RTS Selection: Hardware RTS
+      Flow Control: Software RTS Port: Disabled
+      Flow Control: Software RTS Pin: Disabled
+      Extra: Clock Source: Internal Clock
+      Extra: Start bit detection: Falling Edge
+      Extra: Noise Filter: Disable
+      Extra: Receive FIFO Trigger Level: Max
+      Interrupts: Callback: user_uart_callback_SCOOTER
+      Interrupts: Receive Interrupt Priority: Priority 2
+      Interrupts: Transmit Data Empty Interrupt Priority: Priority 2
+      Interrupts: Transmit End Interrupt Priority: Priority 2
+      Interrupts: Error Interrupt Priority: Priority 2
+      
+    Instance "UART_L86 UART Driver on r_sci_uart"
+      General: Name: UART_L86
+      General: Channel: 9
+      General: Data Bits: 8bits
+      General: Parity: None
+      General: Stop Bits: 1bit
+      Baud: Baud Rate: 115200
+      Baud: Baud Rate Modulation: Disabled
+      Baud: Max Error (%): 5
+      Flow Control: CTS/RTS Selection: Hardware RTS
+      Flow Control: Software RTS Port: Disabled
+      Flow Control: Software RTS Pin: Disabled
+      Extra: Clock Source: Internal Clock
+      Extra: Start bit detection: Falling Edge
+      Extra: Noise Filter: Disable
+      Extra: Receive FIFO Trigger Level: Max
+      Interrupts: Callback: user_uart_callback_L86
+      Interrupts: Receive Interrupt Priority: Priority 2
+      Interrupts: Transmit Data Empty Interrupt Priority: Priority 2
+      Interrupts: Transmit End Interrupt Priority: Priority 2
+      Interrupts: Error Interrupt Priority: Priority 2
+      
+    Instance "ANALOGPINS ADC Driver on r_adc"
+      General: Name: ANALOGPINS
+      General: Unit: 0
+      General: Resolution: 12-Bit
+      General: Alignment: Right
+      General: Clear after read: On
+      General: Mode: Single Scan
+      General: Double-trigger: Disabled
+      Input: Channel Scan Mask (channel availability varies by MCU): Channel 0, Channel 1, Channel 2, Channel 3, Channel 4, Channel 7
+      Input: Group B Scan Mask (channel availability varies by MCU): 
+      Interrupts: Normal/Group A Trigger: Software
+      Interrupts: Group B Trigger: Disabled
+      Interrupts: Group Priority (Valid only in Group Scan Mode): Group A cannot interrupt Group B
+      Input: Add/Average Count: Disabled
+      Input: Reference Voltage control: AVCC0/AVSS0
+      Input: Addition/Averaging Mask (channel availability varies by MCU and unit): 
+      Input: Sample and Hold: Sample and Hold Channels (Available only on selected MCUs): 
+      Input: Sample and Hold: Sample Hold States (Applies only to channels 0, 1, 2): 24
+      Interrupts: Callback: NULL
+      Interrupts: Scan End Interrupt Priority: Disabled
+      Interrupts: Scan End Group B Interrupt Priority: Disabled
+      Extra: ADC Ring Buffer: Not Supported
+      
+    Instance "PWM_RED Timer Driver on r_gpt"
+      General: Name: PWM_RED
+      General: Channel: 1
+      General: Mode: PWM
+      General: Period: 10
+      General: Period Unit: Microseconds
+      Output: Custom Waveform: GTIOA: Initial Output Level: Pin Level Low
+      Output: Custom Waveform: GTIOA: Cycle End Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOA: Compare Match Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOA: Retain Output Level at Count Stop: Disabled
+      Output: Custom Waveform: GTIOB: Initial Output Level: Pin Level Low
+      Output: Custom Waveform: GTIOB: Cycle End Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOB: Compare Match Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOB: Retain Output Level at Count Stop: Disabled
+      Output: Custom Waveform: Custom Waveform Enable: Disabled
+      Output: Duty Cycle Percent (only applicable in PWM mode): 50
+      Output: GTIOCA Output Enabled: False
+      Output: GTIOCA Stop Level: Pin Level Low
+      Output: GTIOCB Output Enabled: True
+      Output: GTIOCB Stop Level: Pin Level Low
+      Input: Count Up Source: 
+      Input: Count Down Source: 
+      Input: Start Source: 
+      Input: Stop Source: 
+      Input: Clear Source: 
+      Input: Capture A Source: 
+      Input: Capture B Source: 
+      Input: Noise Filter A Sampling Clock Select: No Filter
+      Input: Noise Filter B Sampling Clock Select: No Filter
+      Interrupts: Callback: NULL
+      Interrupts: Overflow/Crest Interrupt Priority: Disabled
+      Interrupts: Capture A Interrupt Priority: Disabled
+      Interrupts: Capture B Interrupt Priority: Disabled
+      Interrupts: Underflow/Trough Interrupt Priority: Disabled
+      Extra Features: Extra Features: Disabled
+      Extra Features: Output Disable: POEG Link: POEG Channel 0
+      Extra Features: Output Disable: Output Disable POEG Trigger: 
+      Extra Features: ADC Trigger: Start Event Trigger (GPTE/GPTEH only): 
+      Extra Features: Dead Time: Dead Time Count Up (Raw Counts): 0
+      Extra Features: Dead Time: Dead Time Count Down (Raw Counts) (GPTE/GPTEH only): 0
+      Extra Features: ADC Trigger (GPTE/GPTEH only): ADC A Compare Match (Raw Counts): 0
+      Extra Features: ADC Trigger (GPTE/GPTEH only): ADC B Compare Match (Raw Counts): 0
+      Extra Features: Interrupt Skipping (GPTE/GPTEH only): Interrupt to Count: None
+      Extra Features: Interrupt Skipping (GPTE/GPTEH only): Interrupt Skip Count: 0
+      Extra Features: Interrupt Skipping (GPTE/GPTEH only): Skip ADC Events: None
+      Extra Features: Output Disable: GTIOCA Disable Setting: Disable Prohibited
+      Extra Features: Output Disable: GTIOCB Disable Setting: Disable Prohibited
+      
+    Instance "PWM_GREEN Timer Driver on r_gpt"
+      General: Name: PWM_GREEN
+      General: Channel: 2
+      General: Mode: PWM
+      General: Period: 10
+      General: Period Unit: Microseconds
+      Output: Custom Waveform: GTIOA: Initial Output Level: Pin Level Low
+      Output: Custom Waveform: GTIOA: Cycle End Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOA: Compare Match Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOA: Retain Output Level at Count Stop: Disabled
+      Output: Custom Waveform: GTIOB: Initial Output Level: Pin Level Low
+      Output: Custom Waveform: GTIOB: Cycle End Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOB: Compare Match Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOB: Retain Output Level at Count Stop: Disabled
+      Output: Custom Waveform: Custom Waveform Enable: Disabled
+      Output: Duty Cycle Percent (only applicable in PWM mode): 50
+      Output: GTIOCA Output Enabled: False
+      Output: GTIOCA Stop Level: Pin Level Low
+      Output: GTIOCB Output Enabled: True
+      Output: GTIOCB Stop Level: Pin Level Low
+      Input: Count Up Source: 
+      Input: Count Down Source: 
+      Input: Start Source: 
+      Input: Stop Source: 
+      Input: Clear Source: 
+      Input: Capture A Source: 
+      Input: Capture B Source: 
+      Input: Noise Filter A Sampling Clock Select: No Filter
+      Input: Noise Filter B Sampling Clock Select: No Filter
+      Interrupts: Callback: NULL
+      Interrupts: Overflow/Crest Interrupt Priority: Disabled
+      Interrupts: Capture A Interrupt Priority: Disabled
+      Interrupts: Capture B Interrupt Priority: Disabled
+      Interrupts: Underflow/Trough Interrupt Priority: Disabled
+      Extra Features: Extra Features: Disabled
+      Extra Features: Output Disable: POEG Link: POEG Channel 0
+      Extra Features: Output Disable: Output Disable POEG Trigger: 
+      Extra Features: ADC Trigger: Start Event Trigger (GPTE/GPTEH only): 
+      Extra Features: Dead Time: Dead Time Count Up (Raw Counts): 0
+      Extra Features: Dead Time: Dead Time Count Down (Raw Counts) (GPTE/GPTEH only): 0
+      Extra Features: ADC Trigger (GPTE/GPTEH only): ADC A Compare Match (Raw Counts): 0
+      Extra Features: ADC Trigger (GPTE/GPTEH only): ADC B Compare Match (Raw Counts): 0
+      Extra Features: Interrupt Skipping (GPTE/GPTEH only): Interrupt to Count: None
+      Extra Features: Interrupt Skipping (GPTE/GPTEH only): Interrupt Skip Count: 0
+      Extra Features: Interrupt Skipping (GPTE/GPTEH only): Skip ADC Events: None
+      Extra Features: Output Disable: GTIOCA Disable Setting: Disable Prohibited
+      Extra Features: Output Disable: GTIOCB Disable Setting: Disable Prohibited
+      
+    Instance "PWM_BLUE Timer Driver on r_gpt"
+      General: Name: PWM_BLUE
+      General: Channel: 3
+      General: Mode: PWM
+      General: Period: 10
+      General: Period Unit: Microseconds
+      Output: Custom Waveform: GTIOA: Initial Output Level: Pin Level Low
+      Output: Custom Waveform: GTIOA: Cycle End Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOA: Compare Match Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOA: Retain Output Level at Count Stop: Disabled
+      Output: Custom Waveform: GTIOB: Initial Output Level: Pin Level Low
+      Output: Custom Waveform: GTIOB: Cycle End Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOB: Compare Match Output Level: Pin Level Retain
+      Output: Custom Waveform: GTIOB: Retain Output Level at Count Stop: Disabled
+      Output: Custom Waveform: Custom Waveform Enable: Disabled
+      Output: Duty Cycle Percent (only applicable in PWM mode): 50
+      Output: GTIOCA Output Enabled: False
+      Output: GTIOCA Stop Level: Pin Level Low
+      Output: GTIOCB Output Enabled: True
+      Output: GTIOCB Stop Level: Pin Level Low
+      Input: Count Up Source: 
+      Input: Count Down Source: 
+      Input: Start Source: 
+      Input: Stop Source: 
+      Input: Clear Source: 
+      Input: Capture A Source: 
+      Input: Capture B Source: 
+      Input: Noise Filter A Sampling Clock Select: No Filter
+      Input: Noise Filter B Sampling Clock Select: No Filter
+      Interrupts: Callback: NULL
+      Interrupts: Overflow/Crest Interrupt Priority: Disabled
+      Interrupts: Capture A Interrupt Priority: Disabled
+      Interrupts: Capture B Interrupt Priority: Disabled
+      Interrupts: Underflow/Trough Interrupt Priority: Disabled
+      Extra Features: Extra Features: Disabled
+      Extra Features: Output Disable: POEG Link: POEG Channel 0
+      Extra Features: Output Disable: Output Disable POEG Trigger: 
+      Extra Features: ADC Trigger: Start Event Trigger (GPTE/GPTEH only): 
+      Extra Features: Dead Time: Dead Time Count Up (Raw Counts): 0
+      Extra Features: Dead Time: Dead Time Count Down (Raw Counts) (GPTE/GPTEH only): 0
+      Extra Features: ADC Trigger (GPTE/GPTEH only): ADC A Compare Match (Raw Counts): 0
+      Extra Features: ADC Trigger (GPTE/GPTEH only): ADC B Compare Match (Raw Counts): 0
+      Extra Features: Interrupt Skipping (GPTE/GPTEH only): Interrupt to Count: None
+      Extra Features: Interrupt Skipping (GPTE/GPTEH only): Interrupt Skip Count: 0
+      Extra Features: Interrupt Skipping (GPTE/GPTEH only): Skip ADC Events: None
+      Extra Features: Output Disable: GTIOCA Disable Setting: Disable Prohibited
+      Extra Features: Output Disable: GTIOCB Disable Setting: Disable Prohibited
+      
