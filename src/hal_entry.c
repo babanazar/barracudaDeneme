@@ -1,5 +1,7 @@
 #include "hal_data.h"
+#include "common_utils.h"
 #include "r_sci_uart.h"
+#include "uart.h"
 FSP_CPP_HEADER
 void R_BSP_WarmStart(bsp_warm_start_event_t event);
 FSP_CPP_FOOTER
@@ -109,7 +111,6 @@ uint8_t uartBufferFull_LOCK = 0;
 
 ////////FUNCTIONS
 
-
 uint8_t init_lis3dh(){
 
     return 0;
@@ -144,10 +145,11 @@ void initializeAll(void){
 
 //    R_ADC_Open(&ANALOGPINS_ctrl, &ANALOGPINS_cfg);
 
-    R_SCI_UART_Open(&UART_LOCK_ctrl, &UART_LOCK_cfg);
+//    R_SCI_UART_Open(&UART_LOCK_ctrl, &UART_LOCK_cfg);
+    uart_initialize(&UART_LOCK_ctrl, &UART_LOCK_cfg);
 //    R_SCI_UART_Open(&UART_BLE_ctrl, &UART_BLE_cfg);
 //    R_SCI_UART_Open(&UART_SIMCOM_ctrl, &UART_SIMCOM_cfg);
-//    R_SCI_UART_Open(&UART_L86_ctrl, &UART_L86_cfg);
+    R_SCI_UART_Open(&UART_L86_ctrl, &UART_L86_cfg);
 //    R_SCI_UART_Open(&UART_SCOOTER_ctrl, &UART_SCOOTER_cfg);
 
 //    R_GPT_Open(&PWM_RED_ctrl, &PWM_RED_cfg);
@@ -160,16 +162,11 @@ void dataArrived_ISR(void){
 }
 
 
-
-
-void user_uart_callback_LOCK(uart_callback_args_t *p_args){
-    uartBufferFull_LOCK = 1;
-
-}
 void user_uart_callback_BLE(uart_callback_args_t *p_args){}
 void user_uart_callback_SIMCOM(uart_callback_args_t *p_args){}
 void user_uart_callback_SCOOTER(uart_callback_args_t *p_args){}
-void user_uart_callback_L86(uart_callback_args_t *p_args){}
+void user_uart_callback_L86(uart_callback_args_t *p_args){
+}
 
 void almost_ms_delay(uint32_t ms){
     bsp_prv_software_delay_loop(ms*12000);
@@ -244,10 +241,6 @@ uint16_t readLIS3(int addr){
     return msg;
 }
 
-void print_uart(uint8_t const * const p_src, uint32_t const bytes){
-    almost_ms_delay(1);
-    R_SCI_UART_Write(&UART_LOCK_ctrl, p_src, bytes);
-}
 
 void hal_entry(void)
 {
@@ -261,6 +254,10 @@ void hal_entry(void)
 
 //    STORAGE_DISABLE;
 
+//    APP_PRINT ("\r\n ** Selam ** \r\n");
+
+    uart_print("Here we go!\n");
+
     while(1){
 
         /*if(dataArrivedFlag){
@@ -270,7 +267,8 @@ void hal_entry(void)
 
 
 
-        print_uart("TEST\n", 5);
+//        print_uart("TEST\n", 5);
+//        uart_print("TEST\n");
 //        BOOSTER_ON;
 //        BUZZER_ON;
 //        sendDebugMessage("BOOSTER ON\n", 12);
@@ -285,9 +283,16 @@ void hal_entry(void)
 
 //        R_SCI_UART_Write(&UART_LOCK_ctrl, msg2Bsent2, 6);
 
-        print_uart("DENEME\n", 6);
+//        uart_print("DENEME\n");
+        if(get_lock_data_received_flag() == true)
+        {
+            set_lock_data_received_flag(false);
+            uart_print(&g_temp_buffer);
 
-        almost_ms_delay(1000);
+//            APP_PRINT((char *) &g_temp_buffer);
+        }
+
+//        almost_ms_delay(1000);
 
     }
 
