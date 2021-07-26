@@ -66,32 +66,36 @@ FSP_CPP_FOOTER
 ///////////DEFINITIONS & MACROS
 
 
-#define L86_PWR_ON          R_IOPORT_PinWrite(&g_ioport_ctrl, L86EN, BSP_IO_LEVEL_HIGH)
-#define L86_PWR_OFF         R_IOPORT_PinWrite(&g_ioport_ctrl, L86EN, BSP_IO_LEVEL_LOW)
+#define L86_PWR_ON                  R_IOPORT_PinWrite(&g_ioport_ctrl, L86EN, BSP_IO_LEVEL_HIGH)
+#define L86_PWR_OFF                 R_IOPORT_PinWrite(&g_ioport_ctrl, L86EN, BSP_IO_LEVEL_LOW)
+#define L86_UART_BAUDRATE_9600      (9600)
 
-#define BOOSTER_ON          R_IOPORT_PinWrite(&g_ioport_ctrl, BOOSTEN, BSP_IO_LEVEL_LOW)
-#define BOOSTER_OFF         R_IOPORT_PinWrite(&g_ioport_ctrl, BOOSTEN, BSP_IO_LEVEL_HIGH)
+#define SIM7500_ON                   R_IOPORT_PinWrite(&g_ioport_ctrl, SIM7500PWRCTRL, BSP_IO_LEVEL_HIGH);
+#define SIM7500_OFF                  R_IOPORT_PinWrite(&g_ioport_ctrl, SIM7500PWRCTRL, BSP_IO_LEVEL_LOW);
 
-#define BLDC_ENABLE         R_IOPORT_PinWrite(&g_ioport_ctrl, BLDCEN, BSP_IO_LEVEL_HIGH)
-#define BLDC_DISABLE        R_IOPORT_PinWrite(&g_ioport_ctrl, BLDCEN, BSP_IO_LEVEL_LOW)
+#define BOOSTER_ON                  R_IOPORT_PinWrite(&g_ioport_ctrl, BOOSTEN, BSP_IO_LEVEL_LOW)
+#define BOOSTER_OFF                 R_IOPORT_PinWrite(&g_ioport_ctrl, BOOSTEN, BSP_IO_LEVEL_HIGH)
 
-#define BLE_PWR_ON          R_IOPORT_PinWrite(&g_ioport_ctrl, BLEPWREN, BSP_IO_LEVEL_LOW)
-#define BLE_PWR_OFF         R_IOPORT_PinWrite(&g_ioport_ctrl, BLEPWREN, BSP_IO_LEVEL_HIGH)
+#define BLDC_ENABLE                 R_IOPORT_PinWrite(&g_ioport_ctrl, BLDCEN, BSP_IO_LEVEL_HIGH)
+#define BLDC_DISABLE                R_IOPORT_PinWrite(&g_ioport_ctrl, BLDCEN, BSP_IO_LEVEL_LOW)
 
-#define LIS_PWR_ON          R_IOPORT_PinWrite(&g_ioport_ctrl, LIS3PWR, BSP_IO_LEVEL_HIGH)
-#define LIS3_PWR_OFF        R_IOPORT_PinWrite(&g_ioport_ctrl, LIS3PWR, BSP_IO_LEVEL_LOW)
+#define BLE_PWR_ON                  R_IOPORT_PinWrite(&g_ioport_ctrl, BLEPWREN, BSP_IO_LEVEL_LOW)
+#define BLE_PWR_OFF                 R_IOPORT_PinWrite(&g_ioport_ctrl, BLEPWREN, BSP_IO_LEVEL_HIGH)
 
-#define EEPROM_PWR_ON       R_IOPORT_PinWrite(&g_ioport_ctrl, EEPROMPWR, BSP_IO_LEVEL_HIGH)
-#define EEPROM_PWR_OFF      R_IOPORT_PinWrite(&g_ioport_ctrl, EEPROMPWR, BSP_IO_LEVEL_LOW)
+#define LIS_PWR_ON                  R_IOPORT_PinWrite(&g_ioport_ctrl, LIS3PWR, BSP_IO_LEVEL_HIGH)
+#define LIS3_PWR_OFF                R_IOPORT_PinWrite(&g_ioport_ctrl, LIS3PWR, BSP_IO_LEVEL_LOW)
 
-#define BUZZER_ON           //R_IOPORT_PinWrite(&g_ioport_ctrl, BUZZERCTRL, BSP_IO_LEVEL_HIGH)
-#define BUZZER_OFF          //R_IOPORT_PinWrite(&g_ioport_ctrl, BUZZERCTRL, BSP_IO_LEVEL_LOW)
+#define EEPROM_PWR_ON               R_IOPORT_PinWrite(&g_ioport_ctrl, EEPROMPWR, BSP_IO_LEVEL_HIGH)
+#define EEPROM_PWR_OFF              R_IOPORT_PinWrite(&g_ioport_ctrl, EEPROMPWR, BSP_IO_LEVEL_LOW)
 
-#define HEADLIGHT_ON        R_IOPORT_PinWrite(&g_ioport_ctrl, HEADLIGHT, BSP_IO_LEVEL_HIGH)
-#define HEADLIGHT_OFF       R_IOPORT_PinWrite(&g_ioport_ctrl, HEADLIGHT, BSP_IO_LEVEL_LOW)
+#define BUZZER_ON                   R_IOPORT_PinWrite(&g_ioport_ctrl, BUZZERCTRL, BSP_IO_LEVEL_HIGH)
+#define BUZZER_OFF                  R_IOPORT_PinWrite(&g_ioport_ctrl, BUZZERCTRL, BSP_IO_LEVEL_LOW)
 
-#define STORAGE_DISABLE     R_IOPORT_PinWrite(&g_ioport_ctrl, STORAGEEN, BSP_IO_LEVEL_HIGH)
-#define STORAGE_ENABLE      R_IOPORT_PinWrite(&g_ioport_ctrl, STORAGEEN, BSP_IO_LEVEL_LOW)
+#define HEADLIGHT_ON                R_IOPORT_PinWrite(&g_ioport_ctrl, HEADLIGHT, BSP_IO_LEVEL_HIGH)
+#define HEADLIGHT_OFF               R_IOPORT_PinWrite(&g_ioport_ctrl, HEADLIGHT, BSP_IO_LEVEL_LOW)
+
+#define STORAGE_DISABLE             R_IOPORT_PinWrite(&g_ioport_ctrl, STORAGEEN, BSP_IO_LEVEL_HIGH)
+#define STORAGE_ENABLE              R_IOPORT_PinWrite(&g_ioport_ctrl, STORAGEEN, BSP_IO_LEVEL_LOW)
 
 
 
@@ -136,9 +140,6 @@ void read_LOCKSTAT(void){
     else ISLOCKED = 0;
 }
 
-void sendDebugMessage(char* message, int length){
-    R_SCI_UART_Write(&UART_LOCK_ctrl, &message, length);
-}
 
 void initializeAll(void){
     R_IOPORT_Open(&g_ioport_ctrl, &g_bsp_pin_cfg);
@@ -147,9 +148,29 @@ void initializeAll(void){
 
 //    R_SCI_UART_Open(&UART_LOCK_ctrl, &UART_LOCK_cfg);
     uart_initialize(&UART_LOCK_ctrl, &UART_LOCK_cfg);
-//    R_SCI_UART_Open(&UART_BLE_ctrl, &UART_BLE_cfg);
-//    R_SCI_UART_Open(&UART_SIMCOM_ctrl, &UART_SIMCOM_cfg);
-    R_SCI_UART_Open(&UART_L86_ctrl, &UART_L86_cfg);
+    uart_initialize(&UART_BLE_ctrl, &UART_BLE_cfg);
+
+    /* Initialize UART for SIMCOM. */
+    uart_initialize(&UART_SIMCOM_ctrl, &UART_SIMCOM_cfg);
+
+    /* Initialize UART for L86. */
+    uart_initialize(&UART_L86_ctrl, &UART_L86_cfg);
+
+
+
+    baud_setting_t baud_setting;
+    bool enable_bitrate_modulation = false;
+    uint32_t error_rate_x_1000 = 500;
+
+    fsp_err_t err = R_SCI_UART_BaudCalculate(L86_UART_BAUDRATE_9600, enable_bitrate_modulation, error_rate_x_1000, &baud_setting);
+
+    assert(FSP_SUCCESS == err);
+
+    err = R_SCI_UART_BaudSet(&UART_L86_ctrl, (void *) &baud_setting);
+    assert(FSP_SUCCESS == err);
+
+
+//    set_uart_baud_rate(&UART_L86, L86_UART_BAUDRATE_9600);
 //    R_SCI_UART_Open(&UART_SCOOTER_ctrl, &UART_SCOOTER_cfg);
 
 //    R_GPT_Open(&PWM_RED_ctrl, &PWM_RED_cfg);
@@ -162,11 +183,8 @@ void dataArrived_ISR(void){
 }
 
 
-void user_uart_callback_BLE(uart_callback_args_t *p_args){}
-void user_uart_callback_SIMCOM(uart_callback_args_t *p_args){}
 void user_uart_callback_SCOOTER(uart_callback_args_t *p_args){}
-void user_uart_callback_L86(uart_callback_args_t *p_args){
-}
+
 
 void almost_ms_delay(uint32_t ms){
     bsp_prv_software_delay_loop(ms*12000);
@@ -246,17 +264,26 @@ void hal_entry(void)
 {
 
     /* TODO: add your own code here */
-//    char msg2Bsent1[10] = "Babanazar\n";
-//    char msg2Bsent2[7] = "MIROO\n";
+    char msg2Bsent1[10] = "Babanazar\n";
+    char msg2Bsent2[7] = "MIROO\n";
 //    uint16_t lis3message = 0;
-    int i = 0;
+//    int i = 0;
     initializeAll();
+
+//    L86_PWR_ON;
+//    BLE_PWR_ON;
+
+    SIM7500_ON;
 
 //    STORAGE_DISABLE;
 
 //    APP_PRINT ("\r\n ** Selam ** \r\n");
 
     uart_print("Here we go!\n");
+    uart_print("ATI\r is sent to SIMCOM");
+    send_to_simcom("ATI\r");
+
+//    send_to_ble("AT+START\r\n");
 
     while(1){
 
@@ -267,32 +294,24 @@ void hal_entry(void)
 
 
 
-//        print_uart("TEST\n", 5);
-//        uart_print("TEST\n");
 //        BOOSTER_ON;
 //        BUZZER_ON;
-//        sendDebugMessage("BOOSTER ON\n", 12);
 //        BOOSTER_OFF;
 //        BUZZER_OFF;
-//        sendDebugMessage("BOOSTER OFF\n", 12);
-//        R_SCI_UART_Write(&UART_LOCK_ctrl, "Babanazar\n", 10);
-//        print_uart("Hi\n", 3);
-//        R_SCI_UART_Write(&UART_LOCK_ctrl, &i, 4);
 
-//        R_SCI_UART_Write(&UART_LOCK_ctrl, &msg2Bsent1, 10);
-
-//        R_SCI_UART_Write(&UART_LOCK_ctrl, msg2Bsent2, 6);
-
-//        uart_print("DENEME\n");
         if(get_lock_data_received_flag() == true)
         {
             set_lock_data_received_flag(false);
             uart_print(&g_temp_buffer);
 
-//            APP_PRINT((char *) &g_temp_buffer);
         }
 
-//        almost_ms_delay(1000);
+        if(true == get_L86_data_received_flag())
+        {
+            set_L86_data_received_flag(false);
+            uart_print(&g_temp_buffer);
+        }
+
 
     }
 
