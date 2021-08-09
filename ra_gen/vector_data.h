@@ -3,13 +3,17 @@
 #define VECTOR_DATA_H
 /* Number of interrupts allocated */
 #ifndef VECTOR_DATA_IRQ_COUNT
-#define VECTOR_DATA_IRQ_COUNT    (20)
+#define VECTOR_DATA_IRQ_COUNT    (24)
 #endif
 /* ISR prototypes */
 void sci_uart_rxi_isr(void);
 void sci_uart_txi_isr(void);
 void sci_uart_tei_isr(void);
 void sci_uart_eri_isr(void);
+void spi_rxi_isr(void);
+void spi_txi_isr(void);
+void spi_tei_isr(void);
+void spi_eri_isr(void);
 
 /* Vector table allocations */
 #define VECTOR_NUMBER_SCI0_RXI ((IRQn_Type) 0) /* SCI0 RXI (Receive data full) */
@@ -32,6 +36,10 @@ void sci_uart_eri_isr(void);
 #define VECTOR_NUMBER_SCI3_TXI ((IRQn_Type) 17) /* SCI3 TXI (Transmit data empty) */
 #define VECTOR_NUMBER_SCI3_TEI ((IRQn_Type) 18) /* SCI3 TEI (Transmit end) */
 #define VECTOR_NUMBER_SCI3_ERI ((IRQn_Type) 19) /* SCI3 ERI (Receive error) */
+#define VECTOR_NUMBER_SPI0_RXI ((IRQn_Type) 20) /* SPI0 RXI (Receive buffer full) */
+#define VECTOR_NUMBER_SPI0_TXI ((IRQn_Type) 21) /* SPI0 TXI (Transmit buffer empty) */
+#define VECTOR_NUMBER_SPI0_TEI ((IRQn_Type) 22) /* SPI0 TEI (Transmission complete event) */
+#define VECTOR_NUMBER_SPI0_ERI ((IRQn_Type) 23) /* SPI0 ERI (Error) */
 typedef enum IRQn
 {
     Reset_IRQn = -15,
@@ -65,5 +73,9 @@ typedef enum IRQn
     SCI3_TXI_IRQn = 17, /* SCI3 TXI (Transmit data empty) */
     SCI3_TEI_IRQn = 18, /* SCI3 TEI (Transmit end) */
     SCI3_ERI_IRQn = 19, /* SCI3 ERI (Receive error) */
+    SPI0_RXI_IRQn = 20, /* SPI0 RXI (Receive buffer full) */
+    SPI0_TXI_IRQn = 21, /* SPI0 TXI (Transmit buffer empty) */
+    SPI0_TEI_IRQn = 22, /* SPI0 TEI (Transmission complete event) */
+    SPI0_ERI_IRQn = 23, /* SPI0 ERI (Error) */
 } IRQn_Type;
 #endif /* VECTOR_DATA_H */

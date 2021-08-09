@@ -29,4 +29,8 @@
 #define APP_ERR_PRINT(fn_, ...)  if(LVL_ERR)\
         SEGGER_RTT_printf (SEGGER_INDEX, "[ERR] In Function: %s(), %s",__FUNCTION__,(fn_),##__VA_ARGS__);
 
+#define APP_ERR_TRAP(err)        if(err) {\
+        SEGGER_RTT_printf(SEGGER_INDEX, "\r\nReturned Error Code: 0x%x  \r\n", err);\
+        __asm("BKPT #0\n");} /* trap upon the error  */
+
 #endif /* COMMON_UTILS_H_ */

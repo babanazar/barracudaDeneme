@@ -59,7 +59,7 @@ FSP Configuration
     Main stack size (bytes): 0x400
     Heap size (bytes): 0
     MCU Vcc (mV): 3300
-    Parameter checking: Disabled
+    Parameter checking: Enabled
     Assert Failures: Return FSP_ERR_ASSERTION
     Error Log: No Error Log
     Soft Reset: Disabled
@@ -94,15 +94,15 @@ FSP Configuration
       P011 58 - CN2_27_P011_TS31CFC - - Disabled - - "ADC0: AN06; CTSU0: CFCTS31" - None - - 
       P012 55 ADC0_AN07 FLYINGPROTECTION - - "Analog mode" - - "ADC0: AN07; CTSU0: CFCTS32" - None - - 
       P013 54 GPIO HEADLIGHT - - "Output mode (Initial Low)" - - "ADC0: AN08; CTSU0: CFCTS33" - None - - 
-      P014 53 GPIO LIS3PWR - - "Output mode (Initial Low)" - - "ADC0: AN09; DAC0: DA" - None - - 
-      P015 52 GPIO LIS3MOSI - - "Output mode (Initial Low)" - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
-      P100 48 GPIO LIS2MISO - - "Input mode" - - "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - None - - 
-      P101 47 GPIO LIS3CS - - "Output mode (Initial Low)" - - "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - None - - 
-      P102 46 GPIO EEPROMPWR - - "Output mode (Initial Low)" - - "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - None - - 
-      P103 45 GPIO EEPROMMISO - - "Input mode" - - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - None - - 
+      P014 53 GPIO LIS3PWR Low - "Output mode (Initial Low)" - - "ADC0: AN09; DAC0: DA" - IO - - 
+      P015 52 GPIO - - - "Output mode (Initial Low)" - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
+      P100 48 GPIO MISO Low None "Input mode" CMOS None "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - IO - - 
+      P101 47 GPIO MOSI Low None "Output mode (Initial Low)" CMOS None "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - IO - - 
+      P102 46 GPIO SCK Low - "Output mode (Initial Low)" CMOS None "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - IO - - 
+      P103 45 GPIO LIS3_CS Low - "Input mode" CMOS - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - IO - - 
       P104 44 GPT1_GTIOCB RGBR - - "Peripheral mode" - - "CTSU0: CFCTS13; GPT_POEG1: GTETRG; GPT1: GTIOCB; ICU0: IRQ01; KINT0: KRM4; SCI0: RXD; SCI0: SCL; SPI0: SSL1" - None - - 
-      P105 43 GPIO EEPROMMOSI - - "Output mode (Initial Low)" - - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - None - - 
-      P106 42 GPIO EEPROMCS - - "Output mode (Initial Low)" - - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - None - - 
+      P105 43 GPIO EEPROM_PWR Low None "Output mode (Initial Low)" CMOS - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - IO - - 
+      P106 42 GPIO EEPROM_CS Low - "Output mode (Initial Low)" CMOS - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - IO - - 
       P107 41 GPIO EEPROMCLK - - "Output mode (Initial Low)" - - "GPT8: GTIOCA; KINT0: KRM7" - None - - 
       P108 33 DEBUG0_SWDIO - Low - "Peripheral mode" - None "DEBUG0: SWDIO; GPT_OPS0: GTOULO; GPT0: GTIOCB; SCI9: CTS; SPI1: SSL0" - IO - - 
       P109 34 SCI9_TXD MCU2L86TX Low - "Peripheral mode" CMOS None "CAN0: CTX; CGC0: CLKOUT; CTSU0: CFCTS10; GPT_OPS0: GTOVUP; GPT1: GTIOCA; SCI1: SCK; SCI9: SDA; SCI9: TXD; SPI1: MOSI" - IO - - 
@@ -126,16 +126,16 @@ FSP Configuration
       P302 30 SCI2_TXD MCU2BLETX Low None "Peripheral mode" CMOS None "CTSU0: CFCTS08; GPT_OPS0: GTOUUP; GPT4: GTIOCA; ICU0: IRQ05; SCI2: SDA; SCI2: TXD; SPI1: SSL3" - IO - - 
       P303 29 GPIO STORAGEEN - - "Output mode (Initial High)" - - "CTSU0: CFCTS02; GPT7: GTIOCB" - None - - 
       P304 28 GPIO LIS3INT1 - - "Input mode" - - "GPT7: GTIOCA" - None - - 
-      P400 1 GPIO SIM7500RSTCTRL Low None "Output mode (Initial Low)" CMOS - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - IO - - 
-      P401 2 SCI1_TXD MCU2SIMTX Low None "Peripheral mode" CMOS None "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - IO - - 
-      P402 3 SCI1_RXD MCU2SIMRX Low None "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - IO - - 
-      P403 4 GPIO SIM7500PWRCTRL Low - "Output mode (Initial Low)" CMOS - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - IO - - 
+      P400 1 GPIO SIM7500_RST_CTRL Low None "Output mode (Initial Low)" CMOS - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - IO - - 
+      P401 2 SCI1_TXD MCU_TX2SIM7500 Low None "Peripheral mode" CMOS None "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - IO - - 
+      P402 3 SCI1_RXD MCU_RX2SIM7500 Low None "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - IO - - 
+      P403 4 GPIO SIM7500_PWRKY_CTRL Low - "Output mode (Initial Low)" CMOS - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - IO - - 
       P407 16 GPIO BLDCEN - - "Output mode (Initial Low)" - - "ADC0: ADTRG; AGT0: AGTIO; IIC0: SDA; RTC0: RTCOUT; SCI0: CTS; SPI1: SSL3" - None - - 
       P408 15 SCI3_RXD MCU2SCTRX - - "Peripheral mode" - - "CTSU0: TS04; GPT_OPS0: GTOWLO; GPT5: GTIOCB; ICU0: IRQ07; IIC0: SCL; SCI1: CTS; SCI3: RXD; SCI3: SCL" - None - - 
       P409 14 SCI3_TXD MCU2SCTTX - - "Peripheral mode" - - "CTSU0: TS05; GPT_OPS0: GTOWUP; GPT5: GTIOCA; ICU0: IRQ06; SCI3: SDA; SCI3: TXD" - None - - 
       P410 13 GPIO LOCKSTAT - - "Input mode" - - "AGT1: AGTOB; CTSU0: TS06; GPT_OPS0: GTOVLO; GPT9: GTIOCB; ICU0: IRQ05; SCI0: RXD; SCI0: SCL; SCI3: SCK; SPI0: MISO" - None - - 
       P411 12 GPIO PGOOD - - "Input mode" - - "AGT1: AGTOA; CTSU0: TS07; GPT_OPS0: GTOVUP; GPT9: GTIOCA; ICU0: IRQ04; SCI0: SDA; SCI0: TXD; SCI3: CTS; SPI0: MOSI" - None - - 
-      P500 49 GPIO LIS3SCK - - "Output mode (Initial Low)" - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
+      P500 49 GPIO - - - "Output mode (Initial Low)" - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
       P501 50 GPT2_GTIOCB RGBG - - "Peripheral mode" - - "ADC0: AN17; GPT_OPS0: GTIV; GPT2: GTIOCB; SCI1: SDA; SCI1: TXD" - None - - 
       P502 51 GPT3_GTIOCB RGBB - - "Peripheral mode" - - "ADC0: AN18; GPT_OPS0: GTIW; GPT3: GTIOCB; SCI1: RXD; SCI1: SCL" - None - - 
       P914 18 - - - - Disabled - - "SYSTEM0: VLO" - None - - 
@@ -159,15 +159,15 @@ FSP Configuration
       P011 58 - CN2_27_P011_TS31CFC - - Disabled - - "ADC0: AN06; CTSU0: CFCTS31" - None - - 
       P012 55 ADC0_AN07 FLYINGPROTECTION - - "Analog mode" - - "ADC0: AN07; CTSU0: CFCTS32" - None - - 
       P013 54 - HEADLIGHT - - Disabled - - "ADC0: AN08; CTSU0: CFCTS33" - None - - 
-      P014 53 ADC0_AN09 LIS3PWR - - "Analog mode" - - "ADC0: AN09; DAC0: DA" - None - - 
-      P015 52 GPIO LIS3MOSI - - "Input mode" - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
-      P100 48 SPI0_MISO LIS2MISO - - "Peripheral mode" - - "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - None - - 
-      P101 47 SPI0_MOSI LIS3CS - - "Peripheral mode" - - "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - None - - 
-      P102 46 SPI0_RSPCK EEPROMPWR - - "Peripheral mode" - - "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - None - - 
-      P103 45 SPI0_SSL0 EEPROMMISO - - "Peripheral mode" - - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - None - - 
+      P014 53 ADC0_AN09 LIS3PWR Low - "Analog mode" - - "ADC0: AN09; DAC0: DA" - IO - - 
+      P015 52 GPIO - - - "Input mode" - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
+      P100 48 SPI0_MISO MISO Low None "Peripheral mode" CMOS None "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - IO - - 
+      P101 47 SPI0_MOSI MOSI Low None "Peripheral mode" CMOS None "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - IO - - 
+      P102 46 SPI0_RSPCK SCK Low - "Peripheral mode" CMOS None "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - IO - - 
+      P103 45 SPI0_SSL0 LIS3_CS Low - "Peripheral mode" CMOS - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - IO - - 
       P104 44 - RGBR - - Disabled - - "CTSU0: CFCTS13; GPT_POEG1: GTETRG; GPT1: GTIOCB; ICU0: IRQ01; KINT0: KRM4; SCI0: RXD; SCI0: SCL; SPI0: SSL1" - None - - 
-      P105 43 SPI0_SSL2 EEPROMMOSI - - "Peripheral mode" - - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - None - - 
-      P106 42 SPI0_SSL3 EEPROMCS - - "Peripheral mode" - - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - None - - 
+      P105 43 SPI0_SSL2 EEPROM_PWR Low None "Peripheral mode" CMOS - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - IO - - 
+      P106 42 SPI0_SSL3 EEPROM_CS Low - "Peripheral mode" CMOS - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - IO - - 
       P107 41 GPIO EEPROMCLK - - "Output mode (Initial Low)" - - "GPT8: GTIOCA; KINT0: KRM7" - None - - 
       P108 33 DEBUG0_SWDIO - Low - "Peripheral mode" - None "DEBUG0: SWDIO; GPT_OPS0: GTOULO; GPT0: GTIOCB; SCI9: CTS; SPI1: SSL0" - IO - - 
       P109 34 GPIO MCU2L86TX Medium - "Output mode (Initial Low)" CMOS None "CAN0: CTX; CGC0: CLKOUT; CTSU0: CFCTS10; GPT_OPS0: GTOVUP; GPT1: GTIOCA; SCI1: SCK; SCI9: SDA; SCI9: TXD; SPI1: MOSI" - IO - - 
@@ -191,16 +191,16 @@ FSP Configuration
       P302 30 SCI2_SDA MCU2BLETX Low None "Peripheral mode" "n-ch open drain" None "CTSU0: CFCTS08; GPT_OPS0: GTOUUP; GPT4: GTIOCA; ICU0: IRQ05; SCI2: SDA; SCI2: TXD; SPI1: SSL3" - IO - - 
       P303 29 GPIO STORAGEEN - - "Output mode (Initial Low)" - - "CTSU0: CFCTS02; GPT7: GTIOCB" - None - - 
       P304 28 GPIO LIS3INT1 - - "Output mode (Initial Low)" - - "GPT7: GTIOCA" - None - - 
-      P400 1 GPT6_GTIOCA SIM7500RSTCTRL Low None "Peripheral mode" CMOS - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - IO - - 
-      P401 2 - MCU2SIMTX Low None Disabled CMOS None "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - IO - - 
-      P402 3 GPIO MCU2SIMRX Low IRQ04 "Input mode" CMOS "input pull-up" "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - IO - - 
-      P403 4 - SIM7500PWRCTRL Low - Disabled CMOS - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - IO - - 
+      P400 1 GPT6_GTIOCA SIM7500_RST_CTRL Low None "Peripheral mode" CMOS - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - IO - - 
+      P401 2 - MCU_TX2SIM7500 Low None Disabled CMOS None "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - IO - - 
+      P402 3 GPIO MCU_RX2SIM7500 Low IRQ04 "Input mode" CMOS "input pull-up" "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - IO - - 
+      P403 4 - SIM7500_PWRKY_CTRL Low - Disabled CMOS - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - IO - - 
       P407 16 IIC0_SDA BLDCEN - - "Peripheral mode" - - "ADC0: ADTRG; AGT0: AGTIO; IIC0: SDA; RTC0: RTCOUT; SCI0: CTS; SPI1: SSL3" - None - - 
       P408 15 IIC0_SCL MCU2SCTRX - - "Peripheral mode" - - "CTSU0: TS04; GPT_OPS0: GTOWLO; GPT5: GTIOCB; ICU0: IRQ07; IIC0: SCL; SCI1: CTS; SCI3: RXD; SCI3: SCL" - None - - 
       P409 14 GPIO MCU2SCTTX - - "Input mode" - - "CTSU0: TS05; GPT_OPS0: GTOWUP; GPT5: GTIOCA; ICU0: IRQ06; SCI3: SDA; SCI3: TXD" - None - - 
       P410 13 SCI0_RXD LOCKSTAT - - "Peripheral mode" - - "AGT1: AGTOB; CTSU0: TS06; GPT_OPS0: GTOVLO; GPT9: GTIOCB; ICU0: IRQ05; SCI0: RXD; SCI0: SCL; SCI3: SCK; SPI0: MISO" - None - - 
       P411 12 SCI0_TXD PGOOD - - "Peripheral mode" - - "AGT1: AGTOA; CTSU0: TS07; GPT_OPS0: GTOVUP; GPT9: GTIOCA; ICU0: IRQ04; SCI0: SDA; SCI0: TXD; SCI3: CTS; SPI0: MOSI" - None - - 
-      P500 49 GPIO LIS3SCK - - "Output mode (Initial Low)" - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
+      P500 49 GPIO - - - "Output mode (Initial Low)" - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
       P501 50 SCI1_SDA RGBG - - "Peripheral mode" - - "ADC0: AN17; GPT_OPS0: GTIV; GPT2: GTIOCB; SCI1: SDA; SCI1: TXD" - None - - 
       P502 51 SCI1_SCL RGBB - - "Peripheral mode" - - "ADC0: AN18; GPT_OPS0: GTIW; GPT3: GTIOCB; SCI1: RXD; SCI1: SCL" - None - - 
       P914 18 - - - - Disabled - - "SYSTEM0: VLO" - None - - 
@@ -224,15 +224,15 @@ FSP Configuration
       P011 58 CTSU0_CFCTS31 CN2_27_P011_TS31CFC - - "Peripheral mode" - - "ADC0: AN06; CTSU0: CFCTS31" - None - - 
       P012 55 CTSU0_CFCTS32 FLYINGPROTECTION - - "Peripheral mode" - - "ADC0: AN07; CTSU0: CFCTS32" - None - - 
       P013 54 CTSU0_CFCTS33 HEADLIGHT - - "Peripheral mode" - - "ADC0: AN08; CTSU0: CFCTS33" - None - - 
-      P014 53 - LIS3PWR - - Disabled - - "ADC0: AN09; DAC0: DA" - None - - 
-      P015 52 CTSU0_CFCTS28 LIS3MOSI - - "Peripheral mode" - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
-      P100 48 CTSU0_CFCTS26 LIS2MISO - - "Peripheral mode" - - "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - None - - 
-      P101 47 CTSU0_CFCTS16 LIS3CS - - "Peripheral mode" - - "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - None - - 
-      P102 46 CTSU0_CFCTS15 EEPROMPWR - - "Peripheral mode" - - "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - None - - 
-      P103 45 CTSU0_CFCTS14 EEPROMMISO - - "Peripheral mode" - - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - None - - 
+      P014 53 - LIS3PWR Low - Disabled - - "ADC0: AN09; DAC0: DA" - IO - - 
+      P015 52 CTSU0_CFCTS28 - - - "Peripheral mode" - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
+      P100 48 CTSU0_CFCTS26 MISO Low None "Peripheral mode" CMOS None "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - IO - - 
+      P101 47 CTSU0_CFCTS16 MOSI Low None "Peripheral mode" CMOS None "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - IO - - 
+      P102 46 CTSU0_CFCTS15 SCK Low - "Peripheral mode" CMOS None "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - IO - - 
+      P103 45 CTSU0_CFCTS14 LIS3_CS Low - "Peripheral mode" CMOS - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - IO - - 
       P104 44 CTSU0_CFCTS13 RGBR - - "Peripheral mode" - - "CTSU0: CFCTS13; GPT_POEG1: GTETRG; GPT1: GTIOCB; ICU0: IRQ01; KINT0: KRM4; SCI0: RXD; SCI0: SCL; SPI0: SSL1" - None - - 
-      P105 43 CTSU0_CFCTS34 EEPROMMOSI - - "Peripheral mode" - - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - None - - 
-      P106 42 - EEPROMCS - - Disabled - - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - None - - 
+      P105 43 CTSU0_CFCTS34 EEPROM_PWR Low None "Peripheral mode" CMOS - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - IO - - 
+      P106 42 - EEPROM_CS Low - Disabled CMOS - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - IO - - 
       P107 41 GPIO EEPROMCLK - - "Output mode (Initial Low)" - - "GPT8: GTIOCA; KINT0: KRM7" - None - - 
       P108 33 DEBUG0_SWDIO - Low - "Peripheral mode" - None "DEBUG0: SWDIO; GPT_OPS0: GTOULO; GPT0: GTIOCB; SCI9: CTS; SPI1: SSL0" - IO - - 
       P109 34 CTSU0_CFCTS10 MCU2L86TX Low - "Peripheral mode" CMOS None "CAN0: CTX; CGC0: CLKOUT; CTSU0: CFCTS10; GPT_OPS0: GTOVUP; GPT1: GTIOCA; SCI1: SCK; SCI9: SDA; SCI9: TXD; SPI1: MOSI" - IO - - 
@@ -256,16 +256,16 @@ FSP Configuration
       P302 30 CTSU0_CFCTS08 MCU2BLETX Low None "Peripheral mode" CMOS None "CTSU0: CFCTS08; GPT_OPS0: GTOUUP; GPT4: GTIOCA; ICU0: IRQ05; SCI2: SDA; SCI2: TXD; SPI1: SSL3" - IO - - 
       P303 29 CTSU0_CFCTS02 STORAGEEN - - "Peripheral mode" - - "CTSU0: CFCTS02; GPT7: GTIOCB" - None - - 
       P304 28 GPIO LIS3INT1 - - "Output mode (Initial Low)" - - "GPT7: GTIOCA" - None - - 
-      P400 1 GPIO SIM7500RSTCTRL Low None "Output mode (Initial Low)" CMOS - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - IO - - 
-      P401 2 - MCU2SIMTX Low None Disabled CMOS None "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - IO - - 
-      P402 3 CTSU0_TS18 MCU2SIMRX Low None "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - IO - - 
-      P403 4 CTSU0_TS17 SIM7500PWRCTRL Low - "Peripheral mode" CMOS - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - IO - - 
+      P400 1 GPIO SIM7500_RST_CTRL Low None "Output mode (Initial Low)" CMOS - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - IO - - 
+      P401 2 - MCU_TX2SIM7500 Low None Disabled CMOS None "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - IO - - 
+      P402 3 CTSU0_TS18 MCU_RX2SIM7500 Low None "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - IO - - 
+      P403 4 CTSU0_TS17 SIM7500_PWRKY_CTRL Low - "Peripheral mode" CMOS - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - IO - - 
       P407 16 - BLDCEN - - Disabled - - "ADC0: ADTRG; AGT0: AGTIO; IIC0: SDA; RTC0: RTCOUT; SCI0: CTS; SPI1: SSL3" - None - - 
       P408 15 CTSU0_TS04 MCU2SCTRX - - "Peripheral mode" - - "CTSU0: TS04; GPT_OPS0: GTOWLO; GPT5: GTIOCB; ICU0: IRQ07; IIC0: SCL; SCI1: CTS; SCI3: RXD; SCI3: SCL" - None - - 
       P409 14 CTSU0_TS05 MCU2SCTTX - - "Peripheral mode" - - "CTSU0: TS05; GPT_OPS0: GTOWUP; GPT5: GTIOCA; ICU0: IRQ06; SCI3: SDA; SCI3: TXD" - None - - 
       P410 13 CTSU0_TS06 LOCKSTAT - - "Peripheral mode" - - "AGT1: AGTOB; CTSU0: TS06; GPT_OPS0: GTOVLO; GPT9: GTIOCB; ICU0: IRQ05; SCI0: RXD; SCI0: SCL; SCI3: SCK; SPI0: MISO" - None - - 
       P411 12 CTSU0_TS07 PGOOD - - "Peripheral mode" - - "AGT1: AGTOA; CTSU0: TS07; GPT_OPS0: GTOVUP; GPT9: GTIOCA; ICU0: IRQ04; SCI0: SDA; SCI0: TXD; SCI3: CTS; SPI0: MOSI" - None - - 
-      P500 49 - LIS3SCK - - Disabled - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
+      P500 49 - - - - Disabled - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
       P501 50 - RGBG - - Disabled - - "ADC0: AN17; GPT_OPS0: GTIV; GPT2: GTIOCB; SCI1: SDA; SCI1: TXD" - None - - 
       P502 51 - RGBB - - Disabled - - "ADC0: AN18; GPT_OPS0: GTIW; GPT3: GTIOCB; SCI1: RXD; SCI1: SCL" - None - - 
       P914 18 - - - - Disabled - - "SYSTEM0: VLO" - None - - 
@@ -289,15 +289,15 @@ FSP Configuration
       P011 58 - CN2_27_P011_TS31CFC - - Disabled - - "ADC0: AN06; CTSU0: CFCTS31" - None - - 
       P012 55 - FLYINGPROTECTION - - Disabled - - "ADC0: AN07; CTSU0: CFCTS32" - None - - 
       P013 54 - HEADLIGHT - - Disabled - - "ADC0: AN08; CTSU0: CFCTS33" - None - - 
-      P014 53 - LIS3PWR - - Disabled - - "ADC0: AN09; DAC0: DA" - None - - 
-      P015 52 - LIS3MOSI - - Disabled - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
-      P100 48 - LIS2MISO - - Disabled - - "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - None - - 
-      P101 47 - LIS3CS - - Disabled - - "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - None - - 
-      P102 46 - EEPROMPWR - - Disabled - - "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - None - - 
-      P103 45 - EEPROMMISO - - Disabled - - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - None - - 
+      P014 53 GPIO LIS3PWR Low - "Output mode (Initial Low)" - - "ADC0: AN09; DAC0: DA" - IO - - 
+      P015 52 - - - - Disabled - - "ADC0: AN10; CTSU0: CFCTS28; ICU0: IRQ07" - None - - 
+      P100 48 SPI0_MISO MISO Low None "Peripheral mode" CMOS None "ACMPLP0: CMPIN; AGT0: AGTIO; CTSU0: CFCTS26; GPT_POEG0: GTETRG; GPT5: GTIOCB; ICU0: IRQ02; IIC1: SCL; KINT0: KRM0; SCI0: RXD; SCI0: SCL; SCI1: SCK; SPI0: MISO" - IO - - 
+      P101 47 SPI0_MOSI MOSI Low None "Peripheral mode" CMOS None "ACMPLP0: CMPREF; AGT0: AGTEE; CTSU0: CFCTS16; GPT_POEG1: GTETRG; GPT5: GTIOCA; ICU0: IRQ01; IIC1: SDA; KINT0: KRM1; SCI0: SDA; SCI0: TXD; SCI1: CTS; SPI0: MOSI" - IO - - 
+      P102 46 SPI0_RSPCK SCK Low - "Peripheral mode" CMOS None "ACMPLP1: CMPIN; ADC0: ADTRG; AGT0: AGTO; CAN0: CRX; CTSU0: CFCTS15; GPT_OPS0: GTOWLO; GPT2: GTIOCB; KINT0: KRM2; SCI0: SCK; SCI2: SDA; SCI2: TXD; SPI0: RSPCK" - IO - - 
+      P103 45 GPIO LIS3_CS Low - "Output mode (Initial High)" CMOS - "ACMPLP1: CMPREF; CAN0: CTX; CTSU0: CFCTS14; GPT_OPS0: GTOWUP; GPT2: GTIOCA; KINT0: KRM3; SCI0: CTS; SPI0: SSL0" - IO - - 
       P104 44 - RGBR - - Disabled - - "CTSU0: CFCTS13; GPT_POEG1: GTETRG; GPT1: GTIOCB; ICU0: IRQ01; KINT0: KRM4; SCI0: RXD; SCI0: SCL; SPI0: SSL1" - None - - 
-      P105 43 - EEPROMMOSI - - Disabled - - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - None - - 
-      P106 42 - EEPROMCS - - Disabled - - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - None - - 
+      P105 43 GPIO EEPROM_PWR Low None "Output mode (Initial Low)" CMOS - "CTSU0: CFCTS34; GPT_POEG0: GTETRG; GPT1: GTIOCA; ICU0: IRQ00; KINT0: KRM5; SPI0: SSL2" - IO - - 
+      P106 42 GPIO EEPROM_CS Low - "Output mode (Initial Low)" CMOS - "GPT8: GTIOCB; KINT0: KRM6; SPI0: SSL3" - IO - - 
       P107 41 - EEPROMCLK - - Disabled - - "GPT8: GTIOCA; KINT0: KRM7" - None - - 
       P108 33 DEBUG0_SWDIO - Low - "Peripheral mode" - None "DEBUG0: SWDIO; GPT_OPS0: GTOULO; GPT0: GTIOCB; SCI9: CTS; SPI1: SSL0" - IO - - 
       P109 34 SCI9_TXD MCU2L86TX Low - "Peripheral mode" CMOS None "CAN0: CTX; CGC0: CLKOUT; CTSU0: CFCTS10; GPT_OPS0: GTOVUP; GPT1: GTIOCA; SCI1: SCK; SCI9: SDA; SCI9: TXD; SPI1: MOSI" - IO - - 
@@ -321,16 +321,16 @@ FSP Configuration
       P302 30 SCI2_TXD MCU2BLETX Low None "Peripheral mode" CMOS None "CTSU0: CFCTS08; GPT_OPS0: GTOUUP; GPT4: GTIOCA; ICU0: IRQ05; SCI2: SDA; SCI2: TXD; SPI1: SSL3" - IO - - 
       P303 29 - STORAGEEN - - Disabled - - "CTSU0: CFCTS02; GPT7: GTIOCB" - None - - 
       P304 28 - LIS3INT1 - - Disabled - - "GPT7: GTIOCA" - None - - 
-      P400 1 GPIO SIM7500RSTCTRL Low None "Output mode (Initial Low)" CMOS - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - IO - - 
-      P401 2 SCI1_TXD MCU2SIMTX Low None "Peripheral mode" CMOS None "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - IO - - 
-      P402 3 SCI1_RXD MCU2SIMRX Low None "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - IO - - 
-      P403 4 GPIO SIM7500PWRCTRL Low - "Output mode (Initial Low)" CMOS - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - IO - - 
+      P400 1 GPIO SIM7500_RST_CTRL Low None "Output mode (Initial High)" CMOS - "AGT1: AGTIO; CAC0: CACREF; GPT6: GTIOCA; ICU0: IRQ00; IIC0: SCL; SCI0: SCK; SCI1: SCK" - IO - - 
+      P401 2 SCI1_TXD MCU_TX2SIM7500 Low None "Peripheral mode" CMOS None "CAN0: CTX; GPT_POEG0: GTETRG; GPT6: GTIOCB; ICU0: IRQ05; IIC0: SDA; SCI0: CTS; SCI1: SDA; SCI1: TXD" - IO - - 
+      P402 3 SCI1_RXD MCU_RX2SIM7500 Low None "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; ICU0: IRQ04; SCI1: RXD; SCI1: SCL" - IO - - 
+      P403 4 GPIO SIM7500_PWRKY_CTRL Low - "Output mode (Initial Low)" CMOS - "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; SCI1: CTS" - IO - - 
       P407 16 - BLDCEN - - Disabled - - "ADC0: ADTRG; AGT0: AGTIO; IIC0: SDA; RTC0: RTCOUT; SCI0: CTS; SPI1: SSL3" - None - - 
       P408 15 - MCU2SCTRX - - Disabled - - "CTSU0: TS04; GPT_OPS0: GTOWLO; GPT5: GTIOCB; ICU0: IRQ07; IIC0: SCL; SCI1: CTS; SCI3: RXD; SCI3: SCL" - None - - 
       P409 14 - MCU2SCTTX - - Disabled - - "CTSU0: TS05; GPT_OPS0: GTOWUP; GPT5: GTIOCA; ICU0: IRQ06; SCI3: SDA; SCI3: TXD" - None - - 
       P410 13 - LOCKSTAT - - Disabled - - "AGT1: AGTOB; CTSU0: TS06; GPT_OPS0: GTOVLO; GPT9: GTIOCB; ICU0: IRQ05; SCI0: RXD; SCI0: SCL; SCI3: SCK; SPI0: MISO" - None - - 
       P411 12 - PGOOD - - Disabled - - "AGT1: AGTOA; CTSU0: TS07; GPT_OPS0: GTOVUP; GPT9: GTIOCA; ICU0: IRQ04; SCI0: SDA; SCI0: TXD; SCI3: CTS; SPI0: MOSI" - None - - 
-      P500 49 - LIS3SCK - - Disabled - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
+      P500 49 - - - - Disabled - - "GPT_OPS0: GTIU; GPT2: GTIOCA" - None - - 
       P501 50 - RGBG - - Disabled - - "ADC0: AN17; GPT_OPS0: GTIV; GPT2: GTIOCB; SCI1: SDA; SCI1: TXD" - None - - 
       P502 51 - RGBB - - Disabled - - "ADC0: AN18; GPT_OPS0: GTIW; GPT3: GTIOCB; SCI1: RXD; SCI1: SCL" - None - - 
       P914 18 - - - - Disabled - - "SYSTEM0: VLO" - None - - 
@@ -363,6 +363,15 @@ FSP Configuration
     Parameter Checking: Default (BSP)
     Pin Output Support: Enabled
     Write Protect Enable: Disabled
+    
+  Module "SPI Driver on r_spi"
+    Parameter Checking: Default (BSP)
+    Enable Support for using DTC: Enabled
+    Enable Transmitting from RXI Interrupt: Disabled
+    
+  Module "Transfer Driver on r_dtc"
+    Parameter Checking: Default (BSP)
+    Linker section to keep DTC vector table: .fsp_dtc_vector_table
     
   HAL
     Instance "g_ioport I/O Port Driver on r_ioport"
@@ -649,3 +658,52 @@ FSP Configuration
       Extra Features: Output Disable: GTIOCA Disable Setting: Disable Prohibited
       Extra Features: Output Disable: GTIOCB Disable Setting: Disable Prohibited
       
+    Instance "g_spi0 SPI Driver on r_spi"
+      Name: g_spi0
+      Channel: 0
+      Receive Interrupt Priority: Priority 2
+      Transmit Buffer Empty Interrupt Priority: Priority 2
+      Transfer Complete Interrupt Priority: Priority 2
+      Error Interrupt Priority: Priority 2
+      Operating Mode: Master
+      Clock Phase: Data sampling on odd edge, data variation on even edge
+      Clock Polarity: Low when idle
+      Mode Fault Error: Disable
+      Bit Order: MSB First
+      Callback: spi_callback
+      SPI Mode: Clock Synchronous Operation
+      Full or Transmit Only Mode: Full Duplex
+      Slave Select Polarity: Active Low
+      Select SSL(Slave Select): SSL0
+      MOSI Idle State: MOSI Idle Value Fixing Disable
+      Parity Mode: Disabled
+      Byte Swapping: Disable
+      Bitrate: 1000000
+      Clock Delay: SPI_DELAY_COUNT_1
+      SSL Negation Delay: SPI_DELAY_COUNT_1
+      Next Access Delay: SPI_DELAY_COUNT_1
+      
+      Instance "g_transfer0 Transfer Driver on r_dtc SPI0 TXI (Transmit buffer empty)"
+        Name: g_transfer0
+        Mode: Normal
+        Transfer Size: 1 Byte
+        Destination Address Mode: Fixed
+        Source Address Mode: Incremented
+        Repeat Area (Unused in Normal Mode): Source
+        Interrupt Frequency: After all transfers have completed
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Block Mode): 0
+        Activation Source: SPI0 TXI (Transmit buffer empty)
+        
+      Instance "g_transfer1 Transfer Driver on r_dtc SPI0 RXI (Receive buffer full)"
+        Name: g_transfer1
+        Mode: Normal
+        Transfer Size: 1 Byte
+        Destination Address Mode: Incremented
+        Source Address Mode: Fixed
+        Repeat Area (Unused in Normal Mode): Destination
+        Interrupt Frequency: After all transfers have completed
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Block Mode): 0
+        Activation Source: SPI0 RXI (Receive buffer full)
+        

@@ -290,22 +290,12 @@ void user_uart_callback_SIMCOM(uart_callback_args_t *p_args)
 
         if(UART_EVENT_RX_CHAR == p_args->event)
         {
-            switch (p_args->data)
-            {
-                /* If Enter is pressed by user, set flag to process the data */
-                case CARRIAGE_ASCII:
-                {
-                    g_counter_variable = RESET_VALUE;
-                    g_lock_data_received_flag = true;
-                    break;
-                }
-                /* Read all data provided by user until enter button is pressed */
-                default:
-                {
-                    g_temp_buffer[g_counter_variable++] = (uint8_t) p_args -> data;
-                    break;
-                }
-            }
+            g_temp_buffer[g_counter_variable++] = (uint8_t) p_args -> data;
+        }
+        else if(UART_EVENT_RX_COMPLETE == p_args->event)
+        {
+            g_counter_variable = RESET_VALUE;
+            g_lock_data_received_flag = true;
         }
 }
 

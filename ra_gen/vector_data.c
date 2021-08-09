@@ -24,6 +24,10 @@
             [17] = sci_uart_txi_isr, /* SCI3 TXI (Transmit data empty) */
             [18] = sci_uart_tei_isr, /* SCI3 TEI (Transmit end) */
             [19] = sci_uart_eri_isr, /* SCI3 ERI (Receive error) */
+            [20] = spi_rxi_isr, /* SPI0 RXI (Receive buffer full) */
+            [21] = spi_txi_isr, /* SPI0 TXI (Transmit buffer empty) */
+            [22] = spi_tei_isr, /* SPI0 TEI (Transmission complete event) */
+            [23] = spi_eri_isr, /* SPI0 ERI (Error) */
         };
         const bsp_interrupt_event_t g_interrupt_event_link_select[BSP_ICU_VECTOR_MAX_ENTRIES] =
         {
@@ -47,5 +51,9 @@
             [17] = BSP_PRV_IELS_ENUM(EVENT_SCI3_TXI), /* SCI3 TXI (Transmit data empty) */
             [18] = BSP_PRV_IELS_ENUM(EVENT_SCI3_TEI), /* SCI3 TEI (Transmit end) */
             [19] = BSP_PRV_IELS_ENUM(EVENT_SCI3_ERI), /* SCI3 ERI (Receive error) */
+            [20] = BSP_PRV_IELS_ENUM(EVENT_SPI0_RXI), /* SPI0 RXI (Receive buffer full) */
+            [21] = BSP_PRV_IELS_ENUM(EVENT_SPI0_TXI), /* SPI0 TXI (Transmit buffer empty) */
+            [22] = BSP_PRV_IELS_ENUM(EVENT_SPI0_TEI), /* SPI0 TEI (Transmission complete event) */
+            [23] = BSP_PRV_IELS_ENUM(EVENT_SPI0_ERI), /* SPI0 ERI (Error) */
         };
         #endif
